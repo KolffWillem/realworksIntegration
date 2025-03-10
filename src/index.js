@@ -34,21 +34,6 @@ app.post('/createAgenda', async (req, res) => {
   }
 });
 
-app.put('/updateAgenda/:agendaId', async (req, res) => {
-  const { agendaId } = req.params;
-  const { firmId, agendaData, supabaseUrl, supabaseKey } = req.body;
-
-  try {
-    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, supabaseUrl, supabaseKey);
-
-    const updateResult = await updateAgenda(authHeaderAgenda, agendaId, agendaData);
-    res.status(200).json({ message: 'Success', data: updateResult });
-  } catch (error) {
-    console.error('Error in /updateAgenda:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
 app.post('/createRelation', async (req, res) => {
   const { firmId, email, companyName, firstName, lastName, mobilePhone, accountManager, type = "PARTICULIER", supabaseUrl, supabaseKey } = req.body;
 
@@ -74,6 +59,23 @@ app.post('/createRelation', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+app.put('/updateAgenda/:agendaId', async (req, res) => {
+  const { agendaId } = req.params;
+  const { firmId, agendaData, supabaseUrl, supabaseKey } = req.body;
+
+  try {
+    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, supabaseUrl, supabaseKey);
+
+    const updateResult = await updateAgenda(authHeaderAgenda, agendaId, agendaData);
+    res.status(200).json({ message: 'Success', data: updateResult });
+  } catch (error) {
+    console.error('Error in /updateAgenda:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
 
 app.put('/updateRelation', async (req, res) => {
   const { firmId, email, companyName, firstName, lastName, mobilePhone, accountManager, type = "PARTICULIER", supabaseUrl, supabaseKey } = req.body;
