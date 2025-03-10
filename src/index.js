@@ -13,35 +13,23 @@ const { createRelation, updateRelation } = require('./integrations/relationInteg
 app.use(bodyParser.json());
 
 app.post('/createAgenda', async (req, res) => {
-
-    const { firmId, accountManager, email, companyName, firstName, lastName, mobilePhone, type = "PARTICULIER", agendaData, supabaseKey, supabaseUrl } = req.body;
+  const { 
+    firmId, 
+    agendaData, 
+    supabaseKey, 
+    supabaseUrl 
+  } = req.body;
 
   try {
     const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, supabaseUrl, supabaseKey);
-    const { authHeaderRelation } = await getAuthHeaderRelation(firmId, supabaseUrl, supabaseKey);
-    const { afdelingscode } = await getAfdelingscode(firmId, supabaseUrl, supabaseKey);
-
-    const newRelationBody = {
-      accountmanager: accountManager,
-      afdelingscode: afdelingscode,
-      email: email,
-      bedrijfsnaam: companyName,
-      achternaam: lastName,
-      roepnaam: firstName,
-      mobielTelefoonnummer: mobilePhone,
-      relatiesoort: type,
-    };
-
-    const relationResult = await createRelation(authHeaderRelation, newRelationBody);
-    const relationId = relationResult.relatieId;
-    if (!relationId) throw new Error('Failed to obtain relationId');
-
-    agendaData.relatieId = relationId;
-
     const agendaResult = await createAgenda(authHeaderAgenda, agendaData);
-    res.status(200).json({ message: 'Success', data: { agendaResult, relationId } });
+
+    res.status(200).json({ 
+      message: 'Success', 
+      data: agendaResult 
+    });
   } catch (error) {
-    console.error('Error in  /createAgenda:', error);
+    console.error('Error in /createAgenda:', error);
     res.status(500).json({ error: error.message });
   }
 });
