@@ -230,6 +230,11 @@ app.get('/getRelations/:firmId', async (req, res) => {
   }
 })
 
+// make a hellow world endpoint
+app.get('/hello', (req, res) => {
+  res.send('Hello World');
+});
+
 app.listen(port, () => {
   console.log(`Server is running on poort ${port}`);
 });
