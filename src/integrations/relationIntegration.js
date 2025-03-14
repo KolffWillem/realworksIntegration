@@ -2,7 +2,6 @@ const fetch = require('../utils/fetchClient');
 
 async function handleRelation(authHeader, relationData, method) {
   try {
-    console.log('authHeader', authHeader);
     const url = `https://api.realworks.nl/relaties/v1`;
     const response = await fetch(url, {
       method: method,

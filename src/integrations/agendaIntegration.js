@@ -1,7 +1,6 @@
 const fetch = require('../utils/fetchClient');
 
 async function createAgenda(authHeader, agendaData) {
-  console.log('Creating agenda', agendaData);
   try {
     const response = await fetch('https://api.realworks.nl/agenda/v3', {
       method: 'POST',

@@ -8,7 +8,7 @@ const getAfdelingscode = require('./utils/getAfdelingscode');
 const { createAgenda, updateAgenda } = require('./integrations/agendaIntegration');
 const { createRelation, updateRelation } = require('./integrations/relationIntegration');
 
-
+// ip 172.235.181.143
 
 app.use(bodyParser.json());
 
@@ -21,6 +21,7 @@ app.post('/createAgenda', async (req, res) => {
   } = req.body;
 
   try {
+    console.log(firmId, supabaseUrl, supabaseKey)
     const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, supabaseUrl, supabaseKey);
     const agendaResult = await createAgenda(authHeaderAgenda, agendaData);
 
@@ -220,6 +221,48 @@ app.get('/getRelations/:firmId', async (req, res) => {
   }
 })
 
+app.get('/getAgendaPunten/:firmId', async (req, res) => {
+  const { firmId } = req.params;
+  const { 
+    supabaseUrl, 
+    supabaseKey, 
+    medewerkerId,
+    begintijdVanaf,
+    begintijdTot,
+    status,
+  } = req.query;
+
+
+  
+  try {
+    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, supabaseUrl, supabaseKey);
+
+    const queryParams = new URLSearchParams({
+      begintijdVanaf,
+      begintijdTot,
+      status,
+    }).toString();
+
+    const response = await fetch(`https://api.realworks.nl/agenda/v3/medewerker/${medewerkerId}?${queryParams}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': authHeaderAgenda,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`API responded with status: ${response.status}`);
+    }
+
+    const agendaPunten = await response.json();
+    res.status(200).json(agendaPunten);
+  } catch (error) {
+    console.error('Error in /agenda/v3/medewerker/:medewerkerId:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
 // make a hellow world endpoint
 app.get('/hello', (req, res) => {
   res.send('Hello World');
@@ -228,3 +271,5 @@ app.get('/hello', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on poort ${port}`);
 });
+
+
