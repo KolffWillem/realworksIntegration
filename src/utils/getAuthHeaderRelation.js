@@ -4,7 +4,6 @@ const { createClient } = require('@supabase/supabase-js');
 
 async function getAuthHeaderRelation(firmId, supabaseUrl, supabaseKey) {
 
-  console.log("getAuthHeaderRelation", firmId, supabaseUrl, supabaseKey);
 
   // if the supabase url and key are not provided, use the ones from the config
   if (!supabaseUrl || !supabaseKey) {
