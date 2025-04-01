@@ -87,7 +87,7 @@ app.put('/updateAgenda/:agendaId', async (req, res) => {
 });
 
 app.put('/updateRelation', async (req, res) => {
-  const { firmId, email, companyName, firstName, lastName, mobilePhone, accountManager, type = "PARTICULIER", supabaseUrl, supabaseKey, street, houseNumber, houseNumberAddition, postalCode, city } = req.body;
+  const { firmId, email, companyName, firstName, lastName, mobilePhone, accountManager, type = "PARTICULIER", supabaseUrl, supabaseKey, street, houseNumber, houseNumberAddition, postalCode, city, relationId } = req.body;
 
   try {
     const { authHeaderRelation } = await getAuthHeaderRelation(firmId, supabaseUrl, supabaseKey);
@@ -107,6 +107,7 @@ app.put('/updateRelation', async (req, res) => {
       huisnummertoevoeging: houseNumberAddition,
       postcode: postalCode,
       woonplaats: city,
+      id: relationId,
     };
 
     console.log("updateRelationBody", updateRelationBody)	
