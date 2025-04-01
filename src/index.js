@@ -36,7 +36,7 @@ app.post('/createAgenda', async (req, res) => {
 });
 
 app.post('/createRelation', async (req, res) => {
-  const { firmId, email, companyName, firstName, lastName, mobilePhone, accountManager, type = "PARTICULIER", supabaseUrl, supabaseKey } = req.body;
+  const { firmId, email, companyName, firstName, lastName, mobilePhone, accountManager, type = "PARTICULIER", supabaseUrl, supabaseKey, huisnummer, huisnummertoevoeging, postcode, straat, woonplaats } = req.body;
 
   try {
     const { authHeaderRelation } = await getAuthHeaderRelation(firmId, supabaseUrl, supabaseKey);
@@ -51,7 +51,14 @@ app.post('/createRelation', async (req, res) => {
       roepnaam: firstName,
       mobielTelefoonnummer: mobilePhone,
       relatiesoort: type,
+      huisnummer: huisnummer,
+      huisnummertoevoeging: huisnummertoevoeging,
+      postcode: postcode,
+      straat: straat,
+      woonplaats: woonplaats,
     };
+
+    console.log("newRelationBody", newRelationBody)
 
     const relationResult = await createRelation(authHeaderRelation, newRelationBody);
     res.status(200).json({ message: 'Success', data: relationResult });
@@ -66,7 +73,10 @@ app.put('/updateAgenda/:agendaId', async (req, res) => {
   const { firmId, agendaData, supabaseUrl, supabaseKey } = req.body;
 
   try {
-    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, supabaseUrl, supabaseKey);
+    const formattedSupabaseUrl = supabaseUrl?.endsWith('/') 
+      ? supabaseUrl 
+      : `${supabaseUrl}/`;
+    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, formattedSupabaseUrl, supabaseKey);
 
     const updateResult = await updateAgenda(authHeaderAgenda, agendaId, agendaData);
     res.status(200).json({ message: 'Success', data: updateResult });
@@ -76,10 +86,8 @@ app.put('/updateAgenda/:agendaId', async (req, res) => {
   }
 });
 
-
-
 app.put('/updateRelation', async (req, res) => {
-  const { firmId, email, companyName, firstName, lastName, mobilePhone, accountManager, type = "PARTICULIER", supabaseUrl, supabaseKey } = req.body;
+  const { firmId, email, companyName, firstName, lastName, mobilePhone, accountManager, type = "PARTICULIER", supabaseUrl, supabaseKey, street, houseNumber, houseNumberAddition, postalCode, city } = req.body;
 
   try {
     const { authHeaderRelation } = await getAuthHeaderRelation(firmId, supabaseUrl, supabaseKey);
@@ -94,7 +102,14 @@ app.put('/updateRelation', async (req, res) => {
       roepnaam: firstName,
       mobielTelefoonnummer: mobilePhone,
       relatiesoort: type,
+      straat: street,
+      huisnummer: houseNumber,
+      huisnummertoevoeging: houseNumberAddition,
+      postcode: postalCode,
+      woonplaats: city,
     };
+
+    console.log("updateRelationBody", updateRelationBody)	
 
     const updateResult = await updateRelation(authHeaderRelation,  updateRelationBody);
     res.status(200).json({ message: 'Success', data: updateResult });
@@ -105,15 +120,15 @@ app.put('/updateRelation', async (req, res) => {
 });
 
 app.get('/getAgendaTypes/:firmId', async (req, res) => {
-
   const { firmId } = req.params;
   const { supabaseUrl, supabaseKey } = req.query;
 
   try {
-    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, supabaseUrl, supabaseKey);
+    const formattedSupabaseUrl = supabaseUrl?.endsWith('/') 
+      ? supabaseUrl 
+      : `${supabaseUrl}/`;
+    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, formattedSupabaseUrl, supabaseKey);
     const { afdelingscode } = await getAfdelingscode(firmId, supabaseUrl, supabaseKey);
-
-    
 
     const response = await fetch(`https://api.realworks.nl/agenda/v1/types/${afdelingscode}`, {
       method: 'GET',
@@ -132,7 +147,6 @@ app.get('/getAgendaTypes/:firmId', async (req, res) => {
     if (!contentType || !contentType.includes('application/json')) {
       console.log("contentType", contentType)
       throw new Error(`Expected JSON response but got ${contentType}`);
-
     }
 
     const result = await response.json();
@@ -148,10 +162,12 @@ app.get('/getAgendaStatussen/:firmId', async (req, res) => {
   const { supabaseUrl, supabaseKey } = req.query;
 
   try {
-    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, supabaseUrl, supabaseKey);
+    const formattedSupabaseUrl = supabaseUrl?.endsWith('/') 
+      ? supabaseUrl 
+      : `${supabaseUrl}/`;
+    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, formattedSupabaseUrl, supabaseKey);
     const { afdelingscode } = await getAfdelingscode(firmId, supabaseUrl, supabaseKey);
 
-    
     const response = await fetch(`https://api.realworks.nl/agenda/v1/statussen/${afdelingscode}`, {
       method: 'GET',
       headers: {
@@ -173,11 +189,8 @@ app.get('/getMedewerkers/:firmId', async (req, res) => {
   const { firmId } = req.params;
   const { supabaseUrl, supabaseKey } = req.query;
 
-
-
   try {
     const { authHeaderRelation } = await getAuthHeaderRelation(firmId, supabaseUrl, supabaseKey);
-
 
     const response = await fetch('https://api.realworks.nl/relaties/v1/medewerker', {
       method: 'GET',
@@ -232,10 +245,17 @@ app.get('/getAgendaPunten/:firmId', async (req, res) => {
     status,
   } = req.query;
 
-
+  // Ensure supabaseUrl ends with a trailing slash
+  const formattedSupabaseUrl = supabaseUrl?.endsWith('/') 
+    ? supabaseUrl 
+    : `${supabaseUrl}/`;
   
   try {
-    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, supabaseUrl, supabaseKey);
+    console.log("supabaseUrl", formattedSupabaseUrl)
+    console.log("supabaseKey", supabaseKey)
+    console.log("firmId", firmId)
+
+    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, formattedSupabaseUrl, supabaseKey);
 
     const queryParams = new URLSearchParams({
       begintijdVanaf,
@@ -261,7 +281,6 @@ app.get('/getAgendaPunten/:firmId', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
 
 // make a hellow world endpoint
 app.get('/hello', (req, res) => {
