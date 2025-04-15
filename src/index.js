@@ -272,6 +272,8 @@ app.post('/getAfdelingAgenda/:firmId', async (req, res) => {
     agendatypes,
     actief,
     afdelingscode,
+    aantal,
+    vanaf
   } = req.body;
 
   try {
@@ -284,13 +286,29 @@ app.post('/getAfdelingAgenda/:firmId', async (req, res) => {
 
     // 2. Build query params using the provided fields
     // If any field is optional, you may want to conditionally add it
-    const queryParams = new URLSearchParams({
-      begintijdTot,
-      begintijdVanaf,
-      agendastatus,
-      agendatypes,
-      actief,
-    });
+    const queryParams = new URLSearchParams();
+    if (aantal) {
+      queryParams.append('aantal', aantal);
+    }
+    if (vanaf) {
+      queryParams.append('vanaf', vanaf);
+    }
+
+    if (begintijdTot) {
+      queryParams.append('begintijdTot', begintijdTot);
+    }
+    if (begintijdVanaf) {
+      queryParams.append('begintijdVanaf', begintijdVanaf);
+    }
+    if (agendastatus) {
+      queryParams.append('agendastatus', agendastatus);
+    }
+    if (agendatypes) {
+      queryParams.append('agendatypes', agendatypes);
+    }
+    if (actief) {
+      queryParams.append('actief', actief);
+    }
 
     // 3. Call the RealWorks endpoint
     const response = await fetch(
