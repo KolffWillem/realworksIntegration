@@ -4,7 +4,8 @@ const { port } = require('./config');
 const bodyParser = require('body-parser');
 const getAuthHeaderAgenda = require('./utils/getAuthHeaderAgenda');
 const getAuthHeaderRelation = require('./utils/getAuthHeaderRelation');
-const getAfdelingscode = require('./utils/getAfdelingscode');
+const getAfdelingscode = require('./utils/getAfdelingscode');	
+const getBedrijfscode = require('./utils/getBedrijfscode');
 const { createAgenda, updateAgenda } = require('./integrations/agendaIntegration');
 const { createRelation, updateRelation } = require('./integrations/relationIntegration');
 
@@ -186,6 +187,30 @@ app.get('/getAgendaStatussen/:firmId', async (req, res) => {
   }
 });
 
+
+app.get('/getKenmerken/:firmId', async (req, res) => {
+  const { firmId } = req.params;
+  const { supabaseUrl, supabaseKey } = req.query;
+
+  try {
+    const { authHeaderRelation } = await getAuthHeaderRelation(firmId, supabaseUrl, supabaseKey);
+    const { bedrijfscode } = await getBedrijfscode(firmId, supabaseUrl, supabaseKey);
+
+    const response = await fetch(`https://api.realworks.nl/relaties/v1/kenmerken?bedrijfscode=${bedrijfscode}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': authHeaderRelation,
+      },
+    });
+
+    const result = await response.json();
+    res.status(200).json(result);
+  } catch (error) {
+    console.error('Error in /getKenmerken:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.get('/getMedewerkers/:firmId', async (req, res) => {
   const { firmId } = req.params;
   const { supabaseUrl, supabaseKey } = req.query;
@@ -234,6 +259,67 @@ app.get('/getRelations/:firmId', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 })
+
+
+app.post('/getAfdelingAgenda/:firmId', async (req, res) => {
+  const { firmId } = req.params;
+  const {
+    supabaseUrl,
+    supabaseKey,
+    begintijdTot,
+    begintijdVanaf,
+    agendastatus,
+    agendatypes,
+    actief,
+    afdelingscode,
+  } = req.body;
+
+  try {
+    // 1. Retrieve authentication header
+    const { authHeaderAgenda } = await getAuthHeaderAgenda(
+      firmId,
+      supabaseUrl,
+      supabaseKey
+    );
+
+    // 2. Build query params using the provided fields
+    // If any field is optional, you may want to conditionally add it
+    const queryParams = new URLSearchParams({
+      begintijdTot,
+      begintijdVanaf,
+      agendastatus,
+      agendatypes,
+      actief,
+    });
+
+    // 3. Call the RealWorks endpoint
+    const response = await fetch(
+      `https://api.realworks.nl/agenda/v3/afdeling/${afdelingscode}?${queryParams}`,
+      {
+        method: 'GET',
+        headers: {
+          Authorization: authHeaderAgenda,
+        },
+      }
+    );
+
+    // 4. Parse the response
+    if (!response.ok) {
+      // Something went wrong in the RealWorks call
+      const errorText = await response.text();
+      return res.status(response.status).json({ error: errorText });
+    }
+
+    const data = await response.json();
+
+    // 5. Send data back to the client
+    res.status(200).json(data);
+  } catch (error) {
+    console.error('[Error in /getAfdelingAgenda]:', error);
+    res.status(500).json({ error: 'An unexpected error occurred' });
+  }
+});
+
 
 app.get('/getAgendaPunten/:firmId', async (req, res) => {
   const { firmId } = req.params;
