@@ -261,7 +261,7 @@ app.get('/getRelations/:firmId', async (req, res) => {
 })
 
 
-app.post('/getAfdelingAgenda/:firmId', async (req, res) => {
+app.get("/getAfdelingAgenda/:firmId", async (req, res) => {
   const { firmId } = req.params;
   const {
     supabaseUrl,
@@ -271,14 +271,23 @@ app.post('/getAfdelingAgenda/:firmId', async (req, res) => {
     agendastatus,
     agendatypes,
     actief,
-    afdelingscode,
     aantal,
-    vanaf
-  } = req.body;
+    vanaf,
+  } = req.query;
 
   try {
+    const formattedSupabaseUrl = supabaseUrl?.endsWith("/")
+      ? supabaseUrl
+      : `${supabaseUrl}/`;
+
     // 1. Retrieve authentication header
     const { authHeaderAgenda } = await getAuthHeaderAgenda(
+      firmId,
+      formattedSupabaseUrl,
+      supabaseKey
+    );
+
+    const { afdelingscode } = await getAfdelingscode(
       firmId,
       supabaseUrl,
       supabaseKey
@@ -288,33 +297,33 @@ app.post('/getAfdelingAgenda/:firmId', async (req, res) => {
     // If any field is optional, you may want to conditionally add it
     const queryParams = new URLSearchParams();
     if (aantal) {
-      queryParams.append('aantal', aantal);
+      queryParams.append("aantal", aantal);
     }
     if (vanaf) {
-      queryParams.append('vanaf', vanaf);
+      queryParams.append("vanaf", vanaf);
     }
 
     if (begintijdTot) {
-      queryParams.append('begintijdTot', begintijdTot);
+      queryParams.append("begintijdTot", begintijdTot);
     }
     if (begintijdVanaf) {
-      queryParams.append('begintijdVanaf', begintijdVanaf);
+      queryParams.append("begintijdVanaf", begintijdVanaf);
     }
     if (agendastatus) {
-      queryParams.append('agendastatus', agendastatus);
+      queryParams.append("agendastatus", agendastatus);
     }
     if (agendatypes) {
-      queryParams.append('agendatypes', agendatypes);
+      queryParams.append("agendatypes", agendatypes);
     }
     if (actief) {
-      queryParams.append('actief', actief);
+      queryParams.append("actief", actief);
     }
 
     // 3. Call the RealWorks endpoint
     const response = await fetch(
       `https://api.realworks.nl/agenda/v3/afdeling/${afdelingscode}?${queryParams}`,
       {
-        method: 'GET',
+        method: "GET",
         headers: {
           Authorization: authHeaderAgenda,
         },
@@ -333,57 +342,8 @@ app.post('/getAfdelingAgenda/:firmId', async (req, res) => {
     // 5. Send data back to the client
     res.status(200).json(data);
   } catch (error) {
-    console.error('[Error in /getAfdelingAgenda]:', error);
-    res.status(500).json({ error: 'An unexpected error occurred' });
-  }
-});
-
-
-app.get('/getAgendaPunten/:firmId', async (req, res) => {
-  const { firmId } = req.params;
-  const { 
-    supabaseUrl, 
-    supabaseKey, 
-    medewerkerId,
-    begintijdVanaf,
-    begintijdTot,
-    status,
-  } = req.query;
-
-  // Ensure supabaseUrl ends with a trailing slash
-  const formattedSupabaseUrl = supabaseUrl?.endsWith('/') 
-    ? supabaseUrl 
-    : `${supabaseUrl}/`;
-  
-  try {
-    console.log("supabaseUrl", formattedSupabaseUrl)
-    console.log("supabaseKey", supabaseKey)
-    console.log("firmId", firmId)
-
-    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, formattedSupabaseUrl, supabaseKey);
-
-    const queryParams = new URLSearchParams({
-      begintijdVanaf,
-      begintijdTot,
-      status,
-    }).toString();
-
-    const response = await fetch(`https://api.realworks.nl/agenda/v3/medewerker/${medewerkerId}?${queryParams}`, {
-      method: 'GET',
-      headers: {
-        'Authorization': authHeaderAgenda,
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`API responded with status: ${response.status}`);
-    }
-
-    const agendaPunten = await response.json();
-    res.status(200).json(agendaPunten);
-  } catch (error) {
-    console.error('Error in /agenda/v3/medewerker/:medewerkerId:', error);
-    res.status(500).json({ error: error.message });
+    console.error("[Error in /getAfdelingAgenda]:", error);
+    res.status(500).json({ error: "An unexpected error occurred" });
   }
 });
 
