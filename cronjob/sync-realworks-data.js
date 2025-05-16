@@ -726,6 +726,12 @@ const processIntegrationSync = async (integration) => {
     processBookingsToUpdate(updateBookings, bookingsWithAgendaId, statusMap),
     processNewBookings([newBookings[0]], statusMap, integration),
   ]);
+
+  await supabase.from("integration_instances").update({
+    next_sync_at: moment()
+      .add(integration?.sync_interval ?? 60)
+      .eq("id", integration.id),
+  });
 };
 
 async function syncRealwork() {
