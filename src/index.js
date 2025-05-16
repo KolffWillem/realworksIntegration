@@ -36,6 +36,9 @@ app.post('/createAgenda', async (req, res) => {
   }
 });
 
+
+
+
 app.post('/createRelation', async (req, res) => {
   const { firmId, email, companyName, firstName, lastName, mobilePhone, accountManager, type = "PARTICULIER", supabaseUrl, supabaseKey, huisnummer, huisnummertoevoeging, postcode, straat, woonplaats } = req.body;
 
@@ -344,6 +347,32 @@ app.get("/getAfdelingAgenda/:firmId", async (req, res) => {
   } catch (error) {
     console.error("[Error in /getAfdelingAgenda]:", error);
     res.status(500).json({ error: "An unexpected error occurred" });
+  }
+});
+
+app.get('/getRelation/:relationId', async (req, res) => {
+  const { relationId } = req.params;
+  const { supabaseUrl, supabaseKey, firmId } = req.query;
+
+  try {
+    const { authHeaderRelation } = await getAuthHeaderRelation(firmId, supabaseUrl, supabaseKey);
+
+    const response = await fetch(`https://api.realworks.nl/relaties/v1/${relationId}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': authHeaderRelation,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error fetching relation: ${response.statusText}`);
+    }
+
+    const relation = await response.json();
+    res.status(200).json(relation);
+  } catch (error) {
+    console.error('Error in /getRelation:', error);
+    res.status(500).json({ error: error.message });
   }
 });
 
