@@ -1,0 +1,3316 @@
+{
+  "resultaten": [
+      {
+          "begintijd": "2025-05-13 14:00:00",
+          "eindtijd": "2025-05-13 15:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 52653019,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522072,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Haarlemmerweg 466, 1014 BL Amsterdam",
+          "agendacode": "305975",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-08 10:44:41",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102306",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 10:44:41",
+          "id": 226161022
+      },
+      {
+          "begintijd": "2025-05-13 13:45:00",
+          "eindtijd": "2025-05-13 14:05:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 51689209,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Oostenburgervoorstraat 290, 1018 MR Amsterdam",
+          "bedrijfsrelatiecode": "141808",
+          "agendacode": "306034",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 13:08:25",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102365",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 13:08:25",
+          "id": 226195314
+      },
+      {
+          "begintijd": "2025-05-13 12:15:00",
+          "eindtijd": "2025-05-13 12:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 21839675,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "bedrijfsrelatiecode": "106208",
+          "agendacode": "305970",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 10:27:18",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 10:27:18",
+          "id": 226155636
+      },
+      {
+          "begintijd": "2025-05-13 12:15:00",
+          "eindtijd": "2025-05-13 12:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 54385047,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "305960",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 09:47:36",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 09:47:36",
+          "id": 226147178
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-15 13:00:00",
+          "eindtijd": "2025-05-15 13:20:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 29110843,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 28326587,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Joh.M. Coenenstraat 48, 1071 WH Amsterdam",
+          "bedrijfsrelatiecode": "118020",
+          "agendacode": "306062",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-09 12:53:39",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102361",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 15:52:00",
+          "id": 226227052
+      },
+      {
+          "begintijd": "2025-05-14 16:30:00",
+          "eindtijd": "2025-05-14 16:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55252474,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Stolwijkstraat 27 H, 1059 XS Amsterdam",
+          "agendacode": "306064",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 16:08:43",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102359",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 16:08:43",
+          "id": 226230374
+      },
+      {
+          "begintijd": "2025-05-14 15:15:00",
+          "eindtijd": "2025-05-14 15:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 50339021,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "bedrijfsrelatiecode": "140869",
+          "agendacode": "306008",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 12:25:37",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 11:49:49",
+          "id": 226180448
+      },
+      {
+          "begintijd": "2025-05-16 15:00:00",
+          "eindtijd": "2025-05-16 17:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 52653019,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "305923",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-07 16:15:25",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 16:15:25",
+          "id": 226100326
+      },
+      {
+          "begintijd": "2025-05-15 14:00:00",
+          "eindtijd": "2025-05-15 14:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55460964,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "305962",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 10:37:03",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 09:52:57",
+          "id": 226148452
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "1187 KP  Amstelveen Tolheksbos 10",
+          "begintijd": "2025-05-13 16:15:00",
+          "eindtijd": "2025-05-13 16:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": null,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "16.00 Tolheksbos 10",
+          "bedrijfsrelatiecode": "",
+          "agendacode": "305628",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "Interne text:\n•\tCV and Boiler – all heating and both boilers, 3rd floor and garage, are from 2008/2009. Twice a year we have the heating system and boilers checked. It was done this week again and everything is in perfect conditions. It was cleaned and reviewed.\n•\tEnergy Costs – we use Next Energy as our provider; which works on a variable price system. Our average monthly total electric and gas bill is of euros 600 with on average 3 people living in the house. Gas was 4.100 and Electricity 3.100 for 2023. Important to highlight that we have not installed sun panels as we are selling the house; but Amstelveen has programs to support the installation and the house has a huge surface area for that and therefore their energy bill could be significantly reduced.\n•\tMovables – attached a completed document.\n\n•\tAir Conditioner - 3rd floor room and main bedroom\n•\tFloor heating - living room, kitchen, guest room and bathroom 2nd floor and bathroom 3rd floor\n•\tKitchen appliances - Miele oven/microwave and nespresso machine, Bosch dishwasher, Wolff stove and oven and sub-zero refrigerator and freezer.\n•\tThe bathroom is all marble and done by Marc Smithuis\n•\tTwo gas fireplaces\n•\tAlarm\nEigenaar:\nGeïnteresseerde:",
+          "tijdstipLaatsteWijziging": "2025-05-07 10:33:24",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102285",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 10:39:00",
+          "id": 225866070
+      },
+      {
+          "begintijd": "2025-05-13 10:00:00",
+          "eindtijd": "2025-05-13 11:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 45965485,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "agendacode": "305644",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-06 11:33:36",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 11:33:36",
+          "id": 225882964
+      },
+      {
+          "begintijd": "2025-05-13 10:15:00",
+          "eindtijd": "2025-05-13 10:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55440500,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "agendacode": "305884",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-07 12:34:41",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 12:34:41",
+          "id": 226061146
+      },
+      {
+          "begintijd": "2025-05-16 15:30:00",
+          "eindtijd": "2025-05-16 15:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 53748075,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "306067",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 16:22:41",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 16:22:41",
+          "id": 226232920
+      },
+      {
+          "begintijd": "2025-05-16 13:00:00",
+          "eindtijd": "2025-05-16 13:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55410594,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16496244,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Vondelstraat 156, 1054 GT Amsterdam",
+          "agendacode": "305676",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-06 13:54:04",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102261",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 13:54:04",
+          "id": 225919826
+      },
+      {
+          "begintijd": "2025-05-13 12:45:00",
+          "eindtijd": "2025-05-13 13:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 41198369,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "305989",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 11:05:36",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 11:05:36",
+          "id": 226168150
+      },
+      {
+          "begintijd": "2025-05-14 14:15:00",
+          "eindtijd": "2025-05-14 14:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55437574,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "agendacode": "305875",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-07 11:38:28",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 11:38:28",
+          "id": 226048598
+      },
+      {
+          "begintijd": "2025-05-13 10:00:00",
+          "eindtijd": "2025-05-13 11:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 52653019,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Daniel Stalpertstraat 37, 1072 XA Amsterdam",
+          "agendacode": "305721",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-06 17:20:09",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102307",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 17:20:09",
+          "id": 225982794
+      },
+      {
+          "begintijd": "2025-05-13 13:45:00",
+          "eindtijd": "2025-05-13 14:05:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 54895564,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Oostenburgervoorstraat 290, 1018 MR Amsterdam",
+          "agendacode": "305980",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 10:54:21",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102365",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 10:54:21",
+          "id": 226165576
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-13 14:05:00",
+          "eindtijd": "2025-05-13 14:25:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55474394,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Oostenburgervoorstraat 290, 1018 MR Amsterdam",
+          "agendacode": "306039",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-12 12:08:23",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102365",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 13:58:00",
+          "id": 226205518
+      },
+      {
+          "begintijd": "2025-05-13 10:45:00",
+          "eindtijd": "2025-05-13 11:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 54895454,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "bedrijfsrelatiecode": "143919",
+          "agendacode": "306148",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-09 09:46:23",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 09:37:36",
+          "id": 226282314
+      },
+      {
+          "begintijd": "2025-05-15 15:30:00",
+          "eindtijd": "2025-05-15 16:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 29638133,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Aalsmeerweg 32 3, 1059 AK Amsterdam",
+          "agendacode": "305907",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-07 14:04:53",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102209",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 14:04:53",
+          "id": 226075982
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-15 09:20:00",
+          "eindtijd": "2025-05-15 09:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 16636505,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Plantage Badlaan 8 E, 1018 TH Amsterdam",
+          "bedrijfsrelatiecode": "100349",
+          "agendacode": "306179",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-12 09:33:11",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102384",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 11:19:00",
+          "id": 226306378
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "1083 JD  Amsterdam Matenesse-hof 24",
+          "begintijd": "2025-05-15 14:00:00",
+          "eindtijd": "2025-05-15 14:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": null,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Bezichtiging blokken",
+          "bedrijfsrelatiecode": "",
+          "agendacode": "305742",
+          "agendatype": "Bezichtiging blokken",
+          "extraInfo": "Afgestemd met eigenaar:",
+          "tijdstipLaatsteWijziging": "2025-05-06 17:51:47",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102385",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 17:51:00",
+          "id": 225988160
+      },
+      {
+          "begintijd": "2025-05-14 10:00:00",
+          "eindtijd": "2025-05-14 10:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55492128,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16616979,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Wacht op bevestiging",
+          "korteOmschrijving": "Linnaeusparkweg 52 3, 1098 ED Amsterdam",
+          "agendacode": "306156",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-09 10:14:31",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102342",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 10:14:31",
+          "id": 226293828
+      },
+      {
+          "begintijd": "2025-05-13 10:15:00",
+          "eindtijd": "2025-05-13 10:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55427924,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "agendacode": "305780",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-07 09:24:15",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 09:24:15",
+          "id": 226011718
+      },
+      {
+          "begintijd": "2025-05-14 09:15:00",
+          "eindtijd": "2025-05-14 11:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 45965485,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Oostenburgervoorstraat 290, 1018 MR Amsterdam",
+          "agendacode": "305932",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-07 16:34:23",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102365",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 16:34:23",
+          "id": 226104122
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-13 15:00:00",
+          "eindtijd": "2025-05-13 15:20:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 26350161,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Hacquartstraat 5 A, 1071 SE Amsterdam",
+          "agendacode": "306073",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-08 16:30:36",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102316",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 16:29:00",
+          "id": 226234940
+      },
+      {
+          "begintijd": "2025-05-13 15:20:00",
+          "eindtijd": "2025-05-13 15:40:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 36564538,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 28326587,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Hacquartstraat 5 A, 1071 SE Amsterdam",
+          "agendacode": "306079",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 16:40:52",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102316",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 16:40:52",
+          "id": 226242616
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-13 13:30:00",
+          "eindtijd": "2025-05-13 13:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 50387531,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Mercatorplein 36 H, 1056 CL Amsterdam",
+          "agendacode": "306036",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "eigenaar op de hoogte",
+          "tijdstipLaatsteWijziging": "2025-05-08 16:08:32",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102222",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 13:24:00",
+          "id": 226198576
+      },
+      {
+          "begintijd": "2025-05-16 13:30:00",
+          "eindtijd": "2025-05-16 14:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55434772,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16496244,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Wacht op bevestiging",
+          "korteOmschrijving": "Vondelstraat 156, 1054 GT Amsterdam",
+          "agendacode": "305857",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-07 10:55:05",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102261",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 10:55:05",
+          "id": 226037556
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-14 10:00:00",
+          "eindtijd": "2025-05-14 10:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55492128,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 36230628,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Wacht op bevestiging",
+          "korteOmschrijving": "Linnaeusparkweg 52 3, 1098 ED Amsterdam",
+          "agendacode": "306153",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-09 10:14:31",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102342",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 10:11:00",
+          "id": 226293298
+      },
+      {
+          "begintijd": "2025-05-13 13:00:00",
+          "eindtijd": "2025-05-13 13:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55479548,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "306059",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 15:46:35",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 15:46:35",
+          "id": 226225972
+      },
+      {
+          "begintijd": "2025-05-14 12:10:00",
+          "eindtijd": "2025-05-14 12:20:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 50935897,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Plantage Badlaan 8 E, 1018 TH Amsterdam",
+          "agendacode": "306182",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-09 12:22:32",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102384",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 11:27:10",
+          "id": 226317362
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "1054 VR  Amsterdam Staringstraat 32 2",
+          "begintijd": "2025-05-14 14:00:00",
+          "eindtijd": "2025-05-14 15:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": null,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Nog contact opnemen!!",
+          "korteOmschrijving": "Bezichtiging blokken",
+          "bedrijfsrelatiecode": "",
+          "agendacode": "305635",
+          "agendatype": "Bezichtiging blokken",
+          "extraInfo": "Afgestemd met huurder: gemaild",
+          "tijdstipLaatsteWijziging": "2025-05-06 10:58:05",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 10:57:00",
+          "id": 225872686
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-14 10:35:00",
+          "eindtijd": "2025-05-14 10:55:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 37401316,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Oostenburgervoorstraat 290, 1018 MR Amsterdam",
+          "agendacode": "306169",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-12 12:07:20",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102365",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 10:44:00",
+          "id": 226299428
+      },
+      {
+          "begintijd": "2025-05-13 12:30:00",
+          "eindtijd": "2025-05-13 12:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 38782874,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "bedrijfsrelatiecode": "132067",
+          "agendacode": "305954",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 09:26:04",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 09:26:04",
+          "id": 226140956
+      },
+      {
+          "begintijd": "2025-05-16 15:45:00",
+          "eindtijd": "2025-05-16 16:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 31921091,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "bedrijfsrelatiecode": "123075",
+          "agendacode": "306158",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-09 10:21:09",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 10:21:09",
+          "id": 226295066
+      },
+      {
+          "begintijd": "2025-05-16 15:00:00",
+          "eindtijd": "2025-05-16 15:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55464050,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "305973",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 10:36:16",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 10:36:16",
+          "id": 226158610
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-15 09:10:00",
+          "eindtijd": "2025-05-15 09:20:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55491884,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Plantage Badlaan 8 E, 1018 TH Amsterdam",
+          "agendacode": "306152",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-12 09:33:25",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102384",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 10:08:00",
+          "id": 226290960
+      },
+      {
+          "begintijd": "2025-05-14 10:00:00",
+          "eindtijd": "2025-05-14 10:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55492292,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16616979,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Wacht op bevestiging",
+          "korteOmschrijving": "Linnaeusparkweg 52 3, 1098 ED Amsterdam",
+          "agendacode": "306155",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-09 10:14:15",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102342",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 10:14:15",
+          "id": 226293776
+      },
+      {
+          "begintijd": "2025-05-14 14:00:00",
+          "eindtijd": "2025-05-14 14:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55435976,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16616979,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Daniel Stalpertstraat 37, 1072 XA Amsterdam",
+          "agendacode": "305865",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-07 11:13:15",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102307",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 11:13:15",
+          "id": 226041110
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "1059 AK  Amsterdam Aalsmeerweg 32 3",
+          "begintijd": "2025-05-15 15:45:00",
+          "eindtijd": "2025-05-15 16:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55466602,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Aalsmeerweg 32 3, 1059 AK Amsterdam",
+          "agendacode": "306000",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "Interne text:\nSleutels opgehaald door Pinapple styling - komen sleutel vandaag terugbrengen (1-04-2025)\n\nSTAAT LEEG\nSleutelnummer: 55",
+          "tijdstipLaatsteWijziging": "2025-05-12 09:00:25",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102390",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 11:16:00",
+          "id": 226170634
+      },
+      {
+          "begintijd": "2025-05-16 13:00:00",
+          "eindtijd": "2025-05-16 14:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 52653019,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 28326587,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Annie Boshof 7, 1087 LP Amsterdam",
+          "agendacode": "305936",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-07 17:13:05",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102332",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 17:13:05",
+          "id": 226112776
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "1083 JD  Amsterdam Matenesse-hof 24",
+          "begintijd": "2025-05-13 11:00:00",
+          "eindtijd": "2025-05-13 12:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": null,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Bezichtiging blokken",
+          "bedrijfsrelatiecode": "",
+          "agendacode": "305605",
+          "agendatype": "Bezichtiging blokken",
+          "extraInfo": "Afgestemd met eigenaar:",
+          "tijdstipLaatsteWijziging": "2025-05-06 17:12:44",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102385",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 09:01:00",
+          "id": 225835532
+      },
+      {
+          "begintijd": "2025-05-16 15:15:00",
+          "eindtijd": "2025-05-16 15:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55485298,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "306128",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 22:36:45",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 22:36:45",
+          "id": 226265088
+      },
+      {
+          "begintijd": "2025-05-13 13:45:00",
+          "eindtijd": "2025-05-13 15:25:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 45965485,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Oostenburgervoorstraat 290, 1018 MR Amsterdam",
+          "agendacode": "305931",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-07 16:34:05",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102365",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 16:34:05",
+          "id": 226104068
+      },
+      {
+          "begintijd": "2025-05-13 11:00:00",
+          "eindtijd": "2025-05-13 11:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 44170939,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "bedrijfsrelatiecode": "136669",
+          "agendacode": "306168",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-09 10:43:20",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 10:43:20",
+          "id": 226299138
+      },
+      {
+          "begintijd": "2025-05-15 10:30:00",
+          "eindtijd": "2025-05-15 11:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 52653019,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522072,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Haarlemmerweg 466, 1014 BL Amsterdam",
+          "agendacode": "305976",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-08 10:45:30",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102306",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 10:45:30",
+          "id": 226161144
+      },
+      {
+          "begintijd": "2025-05-15 14:15:00",
+          "eindtijd": "2025-05-15 14:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55476130,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "306044",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 14:35:27",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 14:35:27",
+          "id": 226212344
+      },
+      {
+          "begintijd": "2025-05-13 12:45:00",
+          "eindtijd": "2025-05-13 13:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 26763391,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "bedrijfsrelatiecode": "113855",
+          "agendacode": "306004",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 11:23:44",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 11:23:44",
+          "id": 226173680
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-14 10:55:00",
+          "eindtijd": "2025-05-14 11:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 29058309,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Oostenburgervoorstraat 290, 1018 MR Amsterdam",
+          "agendacode": "305951",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-12 12:07:14",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102365",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 09:14:00",
+          "id": 226137590
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "1054 GR  Amsterdam Vondelstraat 108 A",
+          "begintijd": "2025-05-13 12:00:00",
+          "eindtijd": "2025-05-13 12:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55482106,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Vondelstraat 108 A, 1054 GR Amsterdam",
+          "agendacode": "306081",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "Eigenaar: akk\nGeïnteresseerde: akk",
+          "tijdstipLaatsteWijziging": "2025-05-09 09:56:14",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM101708",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 16:44:00",
+          "id": 226243568
+      },
+      {
+          "begintijd": "2025-05-15 14:30:00",
+          "eindtijd": "2025-05-15 14:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55462830,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "305967",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 10:19:21",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 10:19:21",
+          "id": 226153972
+      },
+      {
+          "begintijd": "2025-05-14 14:15:00",
+          "eindtijd": "2025-05-14 14:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55434290,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "agendacode": "305855",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-07 10:47:56",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 10:47:56",
+          "id": 226035178
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-15 14:00:00",
+          "eindtijd": "2025-05-15 14:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 28350578,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Matenesse-hof 24, 1083 JD Amsterdam",
+          "bedrijfsrelatiecode": "116454",
+          "agendacode": "306150",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-12 12:22:18",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102385",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 09:54:00",
+          "id": 226286568
+      },
+      {
+          "begintijd": "2025-05-16 09:30:00",
+          "eindtijd": "2025-05-16 11:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 45965485,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Stolwijkstraat 27 H, 1059 XS Amsterdam",
+          "agendacode": "305685",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-08 08:52:55",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102359",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 15:13:32",
+          "id": 225945824
+      },
+      {
+          "begintijd": "2025-05-14 14:45:00",
+          "eindtijd": "2025-05-14 15:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 54634657,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "agendacode": "305874",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-09 08:59:16",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 11:38:03",
+          "id": 226048482
+      },
+      {
+          "begintijd": "2025-05-16 15:30:00",
+          "eindtijd": "2025-05-16 15:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55481706,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "306077",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 16:35:59",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 16:35:59",
+          "id": 226239708
+      },
+      {
+          "begintijd": "2025-05-14 14:30:00",
+          "eindtijd": "2025-05-14 14:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 16636595,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "bedrijfsrelatiecode": "100385",
+          "agendacode": "305679",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-06 16:46:11",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 14:34:30",
+          "id": 225936596
+      },
+      {
+          "begintijd": "2025-05-13 12:00:00",
+          "eindtijd": "2025-05-13 12:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 16636180,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "bedrijfsrelatiecode": "100222",
+          "agendacode": "305969",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 10:26:20",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 10:26:20",
+          "id": 226155474
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-14 10:00:00",
+          "eindtijd": "2025-05-14 10:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55492292,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 36230628,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Wacht op bevestiging",
+          "korteOmschrijving": "Linnaeusparkweg 52 3, 1098 ED Amsterdam",
+          "agendacode": "306154",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-09 10:14:15",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102342",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 10:13:00",
+          "id": 226293716
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "1015 CP  Amsterdam Keizersgracht 18 C",
+          "begintijd": "2025-05-14 11:45:00",
+          "eindtijd": "2025-05-14 12:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55087324,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "11.45 Keizersgracht 18c",
+          "agendacode": "306164",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "Interne text:\nIS NIET BEWOOND. WEL BEZICHTIGINGEN DAG VTV DOORGEVEN AAN CLAIRE\n\nvanaf 15 november is het appartement in gebruik t/m 19e. Dus dan geen bezichtigingen.\n\n\n\n\n\nDe vernieuwing van het hele frame aan de achterkant is in Mei 2022 opgeleverd.\nWat betreft de beglazing deze is niet 3 dubbel, maar dubbel.\nVorig jaar hebben we het complete houten frame moeten vernieuwen ivm de zwakte van het hout . De deuren gingen niet meer open zonder ( misschien) het glas te breken!\nIk begrijp dat de steigers naar de voorkant gaan en achter  het verfwerk klaar is.\nOns balkon heeft een gebroken spijl die wordt met het huidig werk gerepareerd.\nIk accepteer geen contract condities of prijsafspraken hierover. Het huidige frame is veel sterker dan de oude rommel die er in zat en daarnaast is het qua geluids- en warmte isolatie een duidelijke upgrade\nSleutelnummer: 102\nEigenaar:\nGeïnteresseerde:",
+          "tijdstipLaatsteWijziging": "2025-05-09 10:40:43",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102350",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 10:33:00",
+          "id": 226297300
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "1059 AK  Amsterdam Aalsmeerweg 32 3",
+          "begintijd": "2025-05-15 16:00:00",
+          "eindtijd": "2025-05-15 16:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55365098,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Aalsmeerweg 32 3, 1059 AK Amsterdam",
+          "agendacode": "305737",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "Interne text:\nSleutels opgehaald door Pinapple styling - komen sleutel vandaag terugbrengen (1-04-2025)\n\nSTAAT LEEG\nSleutelnummer: 55\nEigenaar:\nGeïnteresseerde:",
+          "tijdstipLaatsteWijziging": "2025-05-12 09:00:31",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102390",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 17:37:00",
+          "id": 225987282
+      },
+      {
+          "begintijd": "2025-05-14 12:20:00",
+          "eindtijd": "2025-05-14 12:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 38303037,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Plantage Badlaan 8 E, 1018 TH Amsterdam",
+          "agendacode": "306147",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-12 17:35:27",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102384",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 09:26:12",
+          "id": 226278860
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-15 10:30:00",
+          "eindtijd": "2025-05-15 10:40:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55496728,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Plantage Badlaan 8 E, 1018 TH Amsterdam",
+          "agendacode": "306181",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-12 09:32:40",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102384",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 11:25:00",
+          "id": 226314444
+      },
+      {
+          "begintijd": "2025-05-15 14:00:00",
+          "eindtijd": "2025-05-15 16:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 52653019,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "305922",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-07 16:14:30",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 16:14:30",
+          "id": 226100174
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-14 14:15:00",
+          "eindtijd": "2025-05-14 14:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 54894060,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16616979,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Daniel Stalpertstraat 37, 1072 XA Amsterdam",
+          "agendacode": "305913",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-07 14:48:48",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102307",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 14:48:00",
+          "id": 226083788
+      },
+      {
+          "begintijd": "2025-05-15 14:15:00",
+          "eindtijd": "2025-05-15 14:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55476622,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "306047",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 14:54:08",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 14:43:16",
+          "id": 226213838
+      },
+      {
+          "begintijd": "2025-05-13 12:00:00",
+          "eindtijd": "2025-05-13 12:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55460834,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "305961",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 09:51:21",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 09:51:21",
+          "id": 226148044
+      },
+      {
+          "begintijd": "2025-05-13 13:00:00",
+          "eindtijd": "2025-05-13 13:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 17660557,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "306085",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 16:56:56",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 16:56:56",
+          "id": 226245578
+      },
+      {
+          "begintijd": "2025-05-14 15:00:00",
+          "eindtijd": "2025-05-14 16:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 52653019,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 28326587,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 28326587,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Annie Boshof 7, 1087 LP Amsterdam",
+          "agendacode": "305935",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-09 15:36:07",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102332",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 17:12:26",
+          "id": 226112704
+      },
+      {
+          "begintijd": "2025-05-13 14:05:00",
+          "eindtijd": "2025-05-13 14:25:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 17031731,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Oostenburgervoorstraat 290, 1018 MR Amsterdam",
+          "agendacode": "306121",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 17:31:27",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102365",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 17:31:27",
+          "id": 226256070
+      },
+      {
+          "begintijd": "2025-05-14 16:45:00",
+          "eindtijd": "2025-05-14 17:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55476678,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Stolwijkstraat 27 H, 1059 XS Amsterdam",
+          "agendacode": "306048",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 14:44:42",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102359",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 14:44:42",
+          "id": 226214080
+      },
+      {
+          "begintijd": "2025-05-16 15:15:00",
+          "eindtijd": "2025-05-16 15:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55479384,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "306056",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 15:43:13",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 15:43:13",
+          "id": 226225344
+      },
+      {
+          "begintijd": "2025-05-13 10:30:00",
+          "eindtijd": "2025-05-13 10:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 41198369,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "agendacode": "305959",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 09:39:55",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 09:39:55",
+          "id": 226144454
+      },
+      {
+          "begintijd": "2025-05-15 09:00:00",
+          "eindtijd": "2025-05-15 11:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 29638133,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Plantage Badlaan 8 E, 1018 TH Amsterdam",
+          "agendacode": "306142",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-09 08:27:29",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102384",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 08:27:29",
+          "id": 226267584
+      },
+      {
+          "begintijd": "2025-05-14 10:30:00",
+          "eindtijd": "2025-05-14 12:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 29638133,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Plantage Badlaan 8 E, 1018 TH Amsterdam",
+          "agendacode": "306141",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-09 08:27:10",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102384",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 08:27:10",
+          "id": 226267576
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "1059 AK  Amsterdam Aalsmeerweg 32 3",
+          "begintijd": "2025-05-15 15:45:00",
+          "eindtijd": "2025-05-15 16:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55444630,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Aalsmeerweg 32 3, 1059 AK Amsterdam",
+          "agendacode": "305908",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "Interne text:\nSleutels opgehaald door Pinapple styling - komen sleutel vandaag terugbrengen (1-04-2025)\n\nSTAAT LEEG\nSleutelnummer: 55",
+          "tijdstipLaatsteWijziging": "2025-05-12 09:00:13",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102390",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 14:05:00",
+          "id": 226076092
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-14 14:45:00",
+          "eindtijd": "2025-05-14 15:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 28687206,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "agendacode": "305953",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-12 16:33:37",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 09:17:00",
+          "id": 226138812
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-15 13:00:00",
+          "eindtijd": "2025-05-15 13:20:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 29110843,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Joh.M. Coenenstraat 48, 1071 WH Amsterdam",
+          "bedrijfsrelatiecode": "118020",
+          "agendacode": "306063",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "geinteresseerde: akk\nVerkopers: akk",
+          "tijdstipLaatsteWijziging": "2025-05-09 12:53:39",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102361",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 15:58:00",
+          "id": 226228402
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "1153 PB  Zuiderwoude Zuiderwouder Dorpsstraat 11 A",
+          "begintijd": "2025-05-17 10:00:00",
+          "eindtijd": "2025-05-17 12:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": null,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16496244,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 16496244,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Bezichtiging blokken",
+          "bedrijfsrelatiecode": "",
+          "agendacode": "304916",
+          "agendatype": "Bezichtiging blokken",
+          "extraInfo": "Eigenaar:\nGeïnteresseerde:\nAfgestemd met eigenaar:",
+          "tijdstipLaatsteWijziging": "2025-05-08 10:57:00",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102308",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-04-23 16:36:00",
+          "id": 224869292
+      },
+      {
+          "begintijd": "2025-05-13 12:30:00",
+          "eindtijd": "2025-05-13 12:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55465858,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "305985",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 11:03:39",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 11:03:39",
+          "id": 226167734
+      },
+      {
+          "begintijd": "2025-05-16 10:00:00",
+          "eindtijd": "2025-05-16 11:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 52653019,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Daniel Stalpertstraat 37, 1072 XA Amsterdam",
+          "agendacode": "305725",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-06 17:22:16",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102307",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 17:22:16",
+          "id": 225983144
+      },
+      {
+          "begintijd": "2025-05-13 12:00:00",
+          "eindtijd": "2025-05-13 14:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 29638133,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Plantage Badlaan 8 E, 1018 TH Amsterdam",
+          "agendacode": "306140",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-09 08:26:47",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102384",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 08:26:47",
+          "id": 226267564
+      },
+      {
+          "begintijd": "2025-05-13 15:00:00",
+          "eindtijd": "2025-05-13 15:20:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 26350161,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 28326587,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Hacquartstraat 5 A, 1071 SE Amsterdam",
+          "agendacode": "306074",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 16:30:36",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102316",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 16:30:36",
+          "id": 226237864
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-15 09:00:00",
+          "eindtijd": "2025-05-15 09:10:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55490814,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Plantage Badlaan 8 E, 1018 TH Amsterdam",
+          "agendacode": "306149",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-12 09:33:38",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102384",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 09:52:00",
+          "id": 226286250
+      },
+      {
+          "begintijd": "2025-05-14 15:30:00",
+          "eindtijd": "2025-05-14 17:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 45965485,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Stolwijkstraat 27 H, 1059 XS Amsterdam",
+          "agendacode": "305684",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-08 08:52:19",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102359",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 15:13:09",
+          "id": 225945760
+      },
+      {
+          "begintijd": "2025-05-14 14:00:00",
+          "eindtijd": "2025-05-14 15:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 45965485,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "agendacode": "305645",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-06 11:34:00",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-06 11:34:00",
+          "id": 225883052
+      },
+      {
+          "begintijd": "2025-05-15 14:00:00",
+          "eindtijd": "2025-05-15 16:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 45965485,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Matenesse-hof 24, 1083 JD Amsterdam",
+          "agendacode": "306117",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-08 17:18:20",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102385",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 17:18:20",
+          "id": 226253218
+      },
+      {
+          "begintijd": "2025-05-13 12:00:00",
+          "eindtijd": "2025-05-13 13:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 52653019,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "305934",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-09 12:05:34",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 16:50:59",
+          "id": 226108058
+      },
+      {
+          "begintijd": "2025-05-13 13:15:00",
+          "eindtijd": "2025-05-13 13:30:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 16635996,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "bedrijfsrelatiecode": "100145",
+          "agendacode": "306115",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 17:06:27",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 17:06:27",
+          "id": 226248350
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-14 10:55:00",
+          "eindtijd": "2025-05-14 11:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55493110,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Oostenburgervoorstraat 290, 1018 MR Amsterdam",
+          "agendacode": "306159",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-12 12:07:09",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102365",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 10:26:00",
+          "id": 226295966
+      },
+      {
+          "begintijd": "2025-05-16 15:00:00",
+          "eindtijd": "2025-05-16 15:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55464110,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "305974",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 10:37:05",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 10:37:05",
+          "id": 226158748
+      },
+      {
+          "begintijd": "2025-05-13 10:00:00",
+          "eindtijd": "2025-05-13 10:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55434970,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "agendacode": "305858",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-07 10:57:47",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 10:57:47",
+          "id": 226038166
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-13 15:20:00",
+          "eindtijd": "2025-05-13 15:40:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 36564538,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Hacquartstraat 5 A, 1071 SE Amsterdam",
+          "agendacode": "306078",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-08 16:40:51",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102316",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 16:39:00",
+          "id": 226242444
+      },
+      {
+          "begintijd": "2025-05-14 14:00:00",
+          "eindtijd": "2025-05-14 15:00:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 45965485,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16616979,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Daniel Stalpertstraat 37, 1072 XA Amsterdam",
+          "agendacode": "305864",
+          "agendatype": "Bezichtiging blokken",
+          "tijdstipLaatsteWijziging": "2025-05-07 11:12:34",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102307",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-07 11:12:34",
+          "id": 226040970
+      },
+      {
+          "begintijd": "2025-05-15 14:30:00",
+          "eindtijd": "2025-05-15 14:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 53637205,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 22962209,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Retiefstraat 17 1, 1092 VV Amsterdam",
+          "agendacode": "306011",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 12:00:39",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102352",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 12:00:39",
+          "id": 226184072
+      },
+      {
+          "begintijd": "2025-05-13 10:30:00",
+          "eindtijd": "2025-05-13 10:45:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 44170939,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 15059950,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Staringstraat 32 2, 1054 VR Amsterdam",
+          "bedrijfsrelatiecode": "136669",
+          "agendacode": "306057",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-08 15:44:14",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102346",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 15:44:14",
+          "id": 226225550
+      },
+      {
+          "begintijd": "2025-05-16 17:00:00",
+          "eindtijd": "2025-05-16 17:20:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55470500,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 29638133,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 52653019,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Hacquartstraat 5 A, 1071 SE Amsterdam",
+          "agendacode": "306076",
+          "agendatype": "Bezichtiging",
+          "tijdstipLaatsteWijziging": "2025-05-10 00:20:02",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102316",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-08 16:34:15",
+          "id": 226239370
+      },
+      {
+          "vrijgegevenMove": false,
+          "locatie": "",
+          "begintijd": "2025-05-15 14:00:00",
+          "eindtijd": "2025-05-15 14:15:00",
+          "bedrijfscode": "906003",
+          "relaties": [
+              {
+                  "id": 55487050,
+                  "type": "Id van de gekoppelde relatie"
+              },
+              {
+                  "id": 16522641,
+                  "type": "Agendapunt voor"
+              },
+              {
+                  "id": 45965485,
+                  "type": "Geplaatst door (medewerker)"
+              }
+          ],
+          "status": "Definitief",
+          "korteOmschrijving": "Matenesse-hof 24, 1083 JD Amsterdam",
+          "agendacode": "306144",
+          "agendatype": "Bezichtiging",
+          "extraInfo": "",
+          "tijdstipLaatsteWijziging": "2025-05-10 15:47:23",
+          "afspraakGeheleDag": false,
+          "popupHerinnering": "T10_MINUTEN_ERVOOR",
+          "project": {
+              "projectcode": "AM102385",
+              "type": "WONEN"
+          },
+          "invoerdatum": "2025-05-09 09:06:00",
+          "id": 226272900
+      }
+  ],
+  "paginering": {
+      "volgende": "https://api.realworks.nl/agenda/v3/afdeling/907467?agendatypes=Bezichtiging+blokken,Bezichtiging&begintijdTot=2025-05-18+20:00:00&begintijdVanaf=2025-05-12+20:00:00&vanaf=226317362",
+      "totaalAantal": 156
+  }
+}
