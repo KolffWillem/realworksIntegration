@@ -15,16 +15,16 @@ The cronjob initiates the synchronization process by invoking the `syncRealwork`
 Retrieve integration instances that are due for synchronization based on the `next_sync_at` timestamp.
 
 3.  **Process Each Integration Instance**:
-**Fetch and Sync Status and Types**:
+- **Fetch and Sync Status and Types**:
       Retrieve and synchronize all statuses and types from Realworks.
-**Fetch Agendas**:
+- **Fetch Agendas**:
       Retrieve all agenda data.
-**Separate Blocks and Appointments**:
+- **Separate Blocks and Appointments**:
       Distinguish between blocks and appointments in the agenda data.
-**Process Blocks**:
+- **Process Blocks**:
       Identify new blocks and blocks that require updates by analyzing external attributes.
       Process new blocks and update existing blocks as needed.
-**Process Appointments**:
+- **Process Appointments**:
       Follow a similar flow as blocks to process new and updated appointments.
 
 ### Sync Flow Diagram
