@@ -31,7 +31,6 @@
   ### Sync Flow Diagram
   ```
 
-  ```
   cronjob/index.js
          |
          v
@@ -59,7 +58,6 @@
                         +--> Identify New and Updated Appointments
                         +--> Process New Appointments
                         +--> Update Existing Appointments
-  ```
 
   ```
 
