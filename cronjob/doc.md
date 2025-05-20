@@ -29,36 +29,34 @@
         Follow a similar flow as blocks to process new and updated appointments.
 
   ### Sync Flow Diagram
-  ```
-
+  ```plaintext
   cronjob/index.js
-         |
-         v
+    |
+    v
   syncRealwork()
-         |
-         v
+    |
+    v
   Fetch Integration Instances (next_sync_at)
-         |
-         v
+    |
+    v
   For Each Integration Instance:
-         |
-         +--> Fetch and Sync Status and Types
-         |
-         +--> Fetch Agendas
-                |
-                v
-         Separate Blocks and Appointments
-                |
-                +--> Process Blocks
-                |       +--> Identify New and Updated Blocks
-                |       +--> Process New Blocks
-                |       +--> Update Existing Blocks
-                |
-                +--> Process Appointments
-                        +--> Identify New and Updated Appointments
-                        +--> Process New Appointments
-                        +--> Update Existing Appointments
-
+    |
+    +--> Fetch and Sync Status and Types
+    |
+    +--> Fetch Agendas
+      |
+      v
+    Separate Blocks and Appointments
+      |
+      +--> Process Blocks
+      |       +--> Identify New and Updated Blocks
+      |       +--> Process New Blocks
+      |       +--> Update Existing Blocks
+      |
+      +--> Process Appointments
+         +--> Identify New and Updated Appointments
+         +--> Process New Appointments
+         +--> Update Existing Appointments
   ```
 
   ### Potential Approach to Scale Up
@@ -102,13 +100,13 @@
   ```
 
   ```
--
+
   `cronjob-producer`: Handles fetching integration instances and adding them to the queue.
   `cronjob-worker`: Processes jobs from the queue. Multiple instances can be deployed for scalability.
--
+
   ### Running the PM2 Configuration
   To start the PM2 processes using the configuration file, run the following command:
--
+
   ```bash
 
   ```
