@@ -65,7 +65,7 @@ To improve scalability, the following approach can be adopted:
 Move the fetching of integration instances from `cronjob/sync-realworks-data.js` to `cronjob/index.js`.
 
 2.  **Introduce a Queue**:
-Add each integration instance to a message queue (e.g., Kafka) or a job queue (e.g., Bull Queue).
+Add each integration instance to a message queue (e.g., Kafka) or a job queue (e.g., Bull Queue [https://optimalbits.github.io/bull/]).
 
 3.  **Refactor as Worker**:
 Refactor `cronjob/sync-realworks-data.js` to act as a worker that consumes jobs from the queue.
