@@ -392,8 +392,21 @@ app.get('/hello', (req, res) => {
   res.send('Hello World');
 });
 
+// Initialize cronjob
+const cron = require("node-cron");
+
+cron.schedule("*/10 * * * * *", async () => {
+  console.log("⏰ Starting job at", new Date().toISOString());
+  try {
+    await syncRealwork();
+    console.log("✅ Sync date at", new Date().toISOString());
+  } catch (err) {
+    console.error("❌ Job failed:", err);
+  }
+});
+
 app.listen(port, () => {
-  console.log(`Server is running on poort ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
 
 
