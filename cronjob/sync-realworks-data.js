@@ -60,7 +60,7 @@ const processSyncStatusAndTypes = async (integration) => {
 
   await saveExternalMappings([...typesToSave, ...statusesToSave]);
 
-  return { statuses };
+  return { statuses, types };
 };
 
 const processBookingsToUpdate = async (
@@ -199,11 +199,13 @@ const processBookingsToUpdate = async (
 const processNewBookings = async (
   realworkBookings,
   statusMap,
+  typeMap,
   integration,
   blockId = null
 ) => {
   for await (const realworkBooking of realworkBookings) {
     if (realworkBooking.status === "Geannuleerd") continue;
+    if (typeMap[realworkBooking.agendatype] !== "booking") continue;
 
     console.log(
       "Processing booking:",
@@ -492,6 +494,7 @@ const processUpdateBlock = async (
   realworkBlocks,
   dbBlocks,
   statusMap,
+  typeMap,
   integration
 ) => {
   const dbBlockIds = dbBlocks.map((x) => x.entity_id);
@@ -663,12 +666,12 @@ const processUpdateBlock = async (
         statusMap,
         integration
       ),
-      processNewBookings(newBookings, statusMap, integration),
+      processNewBookings(newBookings, statusMap, typeMap, integration),
     ]);
   }
 };
 
-const processNewBlock = async (realworkBlocks, statusMap, integration) => {
+const processNewBlock = async (realworkBlocks, statusMap, typeMap, integration) => {
   for await (const realworkBlock of realworkBlocks) {
     console.log(
       "Processing new block:",
@@ -769,6 +772,7 @@ const processNewBlock = async (realworkBlocks, statusMap, integration) => {
     await processNewBookings(
       realworkBlockBookings,
       statusMap,
+      typeMap,
       integration,
       block[0]?.id
     );
@@ -776,14 +780,20 @@ const processNewBlock = async (realworkBlocks, statusMap, integration) => {
 };
 
 const processIntegrationSync = async (integration) => {
-  const { statuses } = await processSyncStatusAndTypes(integration);
-  const statusMap = convertToMap(statuses, "external_name", "housap_type");
+  const { statuses, types } = await processSyncStatusAndTypes(integration);
 
+  const statusMap = convertToMap(statuses, "external_name", "housap_type");
+  const typeMap = convertToMap(
+    types.filter(type => type.housap_type === 'block' || type.housap_type === 'booking'),
+    "external_name",
+    "housap_type"
+  );
   console.log("statusMap", statusMap);
+  console.log("typeMap", typeMap);
 
   const realworkAgenda = await realworkService.getFirmAgenda(
     integration.firm_id,
-    ["Bezichtiging blokken", "Bezichtiging"]
+    Object.keys(typeMap)
   );
 
   let realworkBookings = [];
@@ -872,9 +882,10 @@ const processIntegrationSync = async (integration) => {
       updateBlocks,
       blocksWithAgendaId,
       statusMap,
+      typeMap,
       integration
     ),
-    processNewBlock(newBlocks, statusMap, integration),
+    processNewBlock(newBlocks, statusMap, typeMap, integration),
   ]);
 
   const bookingsWithoutBlock = realworkBlocks.filter(
@@ -906,13 +917,8 @@ const processIntegrationSync = async (integration) => {
   });
 
   await Promise.all([
-    processBookingsToUpdate(
-      updateBookings,
-      bookingsWithAgendaId,
-      statusMap,
-      integration
-    ),
-    processNewBookings(newBookings, statusMap, integration),
+    processBookingsToUpdate(updateBookings, bookingsWithAgendaId, statusMap, integration),
+    processNewBookings(newBookings, statusMap, typeMap, integration),
   ]);
 };
 
@@ -923,7 +929,7 @@ async function syncRealwork() {
     const chunks = chunkArray(
       integrations.filter(
         //TODO: update after done
-        (x) => x.firm_id === "910041e5-8c42-4fb2-b812-ea21875b8072"
+        (x) => x.firm_id === "999b6f6b-fbb6-4489-9c97-e3fa35f8a611"
       ),
       5
     );

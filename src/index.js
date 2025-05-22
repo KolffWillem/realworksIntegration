@@ -8,6 +8,7 @@ const getAfdelingscode = require('./utils/getAfdelingscode');
 const getBedrijfscode = require('./utils/getBedrijfscode');
 const { createAgenda, updateAgenda } = require('./integrations/agendaIntegration');
 const { createRelation, updateRelation } = require('./integrations/relationIntegration');
+const syncRealwork = require('../cronjob/sync-realworks-data');
 
 // ip 172.235.181.143
 
@@ -344,6 +345,19 @@ app.get("/getAfdelingAgenda/:firmId", async (req, res) => {
   } catch (error) {
     console.error("[Error in /getAfdelingAgenda]:", error);
     res.status(500).json({ error: "An unexpected error occurred" });
+  }
+});
+
+// Add new endpoint for manual sync
+app.post('/sync-realworks', async (req, res) => {
+  console.log("🔄 Starting manual sync at", new Date().toISOString());
+  try {
+    await syncRealwork();
+    console.log("✅ Manual sync completed at", new Date().toISOString());
+    res.status(200).json({ message: 'Sync completed successfully' });
+  } catch (error) {
+    console.error("❌ Manual sync failed:", error);
+    res.status(500).json({ error: error.message });
   }
 });
 

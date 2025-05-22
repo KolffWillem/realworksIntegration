@@ -2,7 +2,7 @@ const moment = require("moment");
 const supabase = require("../../supabaseClient");
 const { sendEmailAndNotification } = require("./email.service");
 
-export class BookingService {
+class BookingService {
   createNewAppointment = async ({
     date,
     startTime,

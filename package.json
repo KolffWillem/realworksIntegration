@@ -2,6 +2,7 @@
   "name": "realworksserver",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "start": "pm2 start src/index.js --env production",
     "dev": "nodemon src/index.js"
