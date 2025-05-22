@@ -2,7 +2,7 @@ const moment = require("moment");
 const supabase = require("../../supabaseClient");
 const { sendEmailAndNotification } = require("./email.service");
 
-class BookingService {
+export class BookingService {
   createNewAppointment = async ({
     date,
     startTime,
@@ -15,86 +15,110 @@ class BookingService {
     integration,
     realworkId,
   }) => {
-    const duration = moment(endTime).diff(moment(startTime), "minutes");
+    try {
+      console.log(
+        `Creating new appointment for client ${clientId} on ${date} from ${startTime} to ${endTime}`
+      );
 
-    const { data: block, error: blockError } = await supabase
-      .from("blocks")
-      .insert([
+      const duration = moment(endTime).diff(moment(startTime), "minutes");
+
+      const { data: block, error: blockError } = await supabase
+        .from("blocks")
+        .insert([
+          {
+            date,
+            start_time: startTime,
+            end_time: endTime,
+            profile_id: profileId,
+            project_id: projectId,
+            created_by: createdBy,
+            parties: 1,
+            interval_time: 0,
+            duration,
+          },
+        ])
+        .select("*, project:project_id(*)")
+        .single();
+
+      if (blockError) {
+        console.error(`Error creating block for appointment:`, blockError);
+        throw blockError;
+      }
+
+      console.log(`Created block ${block.id} for new appointment`);
+
+      const { data: slot, error: slotError } = await supabase
+        .from("slots")
+        .insert([
+          {
+            block_id: block.id,
+            project_id: block.project_id,
+            start_time: startTime.split(" ")[1],
+            max_groups: block.parties,
+            duration: duration,
+            date: block.date,
+            profile_id: block.profile_id,
+            created_by: block.created_by,
+          },
+        ])
+        .select("*")
+        .single();
+
+      if (slotError) {
+        console.error(`Error creating slot for appointment:`, slotError);
+        throw slotError;
+      }
+
+      console.log(`Created slot ${slot.id} for new appointment`);
+
+      const { data: booking, error: bookingError } = await supabase
+        .from("bookings")
+        .insert([
+          {
+            slot_id: slot.id,
+            client_id: clientId,
+            status,
+            for_someone_else: false,
+          },
+        ])
+        .select("*, client:client_id(*)")
+        .single();
+
+      if (bookingError) {
+        console.error(`Error creating booking for appointment:`, bookingError);
+        throw bookingError;
+      }
+
+      console.log(`Created booking ${booking.id} for new appointment`);
+
+      await supabase.from("external_attributes").insert([
         {
-          date,
-          start_time: startTime,
-          end_time: endTime,
-          profile_id: profileId,
-          project_id: projectId,
-          created_by: createdBy,
-          parties: 1,
-          interval_time: 0,
-          duration,
+          entity_id: booking.id,
+          entity_type: "booking",
+          attribute_name: "agendaId",
+          attribute_value: realworkId,
+          integration_instance_id: integration.id,
         },
-      ])
-      .select("*, project:project_id(*)")
-      .single();
+      ]);
 
-    if (blockError) {
-      throw blockError;
+      console.log(
+        `Created external attribute for booking ${booking.id} with realworkId ${realworkId}`
+      );
+
+      await this.sendMail({
+        clientId,
+        booking,
+        projectId,
+        profileId,
+        integration,
+        duration,
+      });
+
+      return booking;
+    } catch (error) {
+      console.error(`Error in createNewAppointment:`, error);
+      throw error;
     }
-
-    const { data: slot, error: slotError } = await supabase
-      .from("slots")
-      .insert([
-        {
-          block_id: block.id,
-          project_id: block.project_id,
-          start_time: startTime.split(" ")[1],
-          max_groups: block.parties,
-          duration: duration,
-          date: block.date,
-          profile_id: block.profile_id,
-          created_by: block.created_by,
-        },
-      ])
-      .select("*")
-      .single();
-
-    if (slotError) {
-      throw slotError;
-    }
-
-    const { data: booking, error: bookingError } = await supabase
-      .from("bookings")
-      .insert([
-        {
-          slot_id: slot.id,
-          client_id: clientId,
-          status,
-          for_someone_else: false,
-        },
-      ])
-      .select("*, client:client_id(*)")
-      .single();
-
-    if (bookingError) {
-      throw bookingError;
-    }
-
-    await supabase.from("external_attributes").insert([
-      {
-        entity_id: booking.id,
-        entity_type: "booking",
-        attribute_name: "agendaId",
-        attribute_value: realworkId,
-        integration_instance_id: integration.id,
-      },
-    ]);
-
-    await this.sendMail({
-      clientId,
-      booking,
-      projectId,
-      profileId,
-      integration,
-      duration,
-    });
   };
 
   createBookingInSlot = async ({
@@ -108,45 +132,64 @@ class BookingService {
     integration,
     realworkId,
   }) => {
-    const duration = moment(endTime).diff(moment(startTime), "minutes");
+    try {
+      console.log(
+        `Creating booking in existing slot ${slotId} for client ${clientId}`
+      );
 
-    await supabase.from("slots").update({ duration }).eq("id", slotId);
+      const duration = moment(endTime).diff(moment(startTime), "minutes");
 
-    const { data: booking, error: bookingError } = await supabase
-      .from("bookings")
-      .insert([
+      await supabase.from("slots").update({ duration }).eq("id", slotId);
+      console.log(`Updated slot ${slotId} with duration ${duration}`);
+
+      const { data: booking, error: bookingError } = await supabase
+        .from("bookings")
+        .insert([
+          {
+            slot_id: slotId,
+            client_id: clientId,
+            status,
+            for_someone_else: false,
+          },
+        ])
+        .select("*, client:client_id(*)")
+        .single();
+
+      if (bookingError) {
+        console.error(`Error creating booking in slot:`, bookingError);
+        throw bookingError;
+      }
+
+      console.log(`Created booking ${booking.id} in slot ${slotId}`);
+
+      await supabase.from("external_attributes").insert([
         {
-          slot_id: slotId,
-          client_id: clientId,
-          status,
-          for_someone_else: false,
+          entity_id: booking.id,
+          entity_type: "booking",
+          attribute_name: "agendaId",
+          attribute_value: realworkId,
+          integration_instance_id: integration.id,
         },
-      ])
-      .select("*, client:client_id(*)")
-      .single();
+      ]);
 
-    if (bookingError) {
-      throw bookingError;
+      console.log(
+        `Created external attribute for booking ${booking.id} with realworkId ${realworkId}`
+      );
+
+      await this.sendMail({
+        clientId,
+        booking,
+        projectId,
+        profileId,
+        integration,
+        duration,
+      });
+
+      return booking;
+    } catch (error) {
+      console.error(`Error in createBookingInSlot:`, error);
+      throw error;
     }
-
-    await supabase.from("external_attributes").insert([
-      {
-        entity_id: booking.id,
-        entity_type: "booking",
-        attribute_name: "agendaId",
-        attribute_value: realworkId,
-        integration_instance_id: integration.id,
-      },
-    ]);
-
-    await this.sendMail({
-      clientId,
-      booking,
-      projectId,
-      profileId,
-      integration,
-      duration,
-    });
   };
 
   sendMail = async ({
@@ -165,6 +208,7 @@ class BookingService {
       profile_id: profileId,
       firm_id: integration.firm_id,
       skipBrokerNotification: true, // Only notify broker if explicitly requested
+      skipClientEmail: true, // Skip sending email to client
       additionalVariables: {
         duration,
         cancel_url: encodeURI(

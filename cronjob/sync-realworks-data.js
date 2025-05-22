@@ -66,7 +66,8 @@ const processSyncStatusAndTypes = async (integration) => {
 const processBookingsToUpdate = async (
   realworkBookings,
   dbBookings,
-  statusMap
+  statusMap,
+  integration = null
 ) => {
   const dbBookingIds = dbBookings.map((x) => x.entity_id);
 
@@ -89,8 +90,26 @@ const processBookingsToUpdate = async (
 
     if (!realworkBrokerId) continue;
 
+    // Try to get firm_id for fallback broker
+    let firmId = null;
+    if (integration) {
+      firmId = integration.firm_id;
+    } else {
+      // If integration not provided, try to get firm_id from project
+      const { data: project } = await supabase
+        .from("projects")
+        .select("firm_id")
+        .eq("id", booking.slot.project_id)
+        .single();
+
+      if (project) {
+        firmId = project.firm_id;
+      }
+    }
+
     const dbBrokerId = await realworkService.findBrokerByRealworkId(
-      realworkBrokerId
+      realworkBrokerId,
+      firmId
     );
 
     if (!dbBrokerId) {
@@ -186,7 +205,12 @@ const processNewBookings = async (
   for await (const realworkBooking of realworkBookings) {
     if (realworkBooking.status === "Geannuleerd") continue;
 
-    console.log(realworkBooking);
+    console.log(
+      "Processing booking:",
+      realworkBooking.id,
+      "Project Code:",
+      realworkBooking?.project?.projectcode
+    );
 
     // PROJECT CHECKING
     // if (!realworkBooking?.project?.projectcode) {
@@ -194,8 +218,8 @@ const processNewBookings = async (
     // }
 
     //TODO: remove
-    const realworkProjectCode =
-      "123456" ?? realworkBooking?.project?.projectcode;
+    const realworkProjectCode = realworkBooking?.project?.projectcode;
+    // "123456" ?? realworkBooking?.project?.projectcode;
 
     const projectId = await realworkService.findProjectByProjectCode(
       realworkProjectCode
@@ -214,12 +238,15 @@ const processNewBookings = async (
     if (!realworkBrokerId) continue;
 
     const profileId = await realworkService.findBrokerByRealworkId(
-      realworkBrokerId
+      realworkBrokerId,
+      integration.firm_id
     );
 
+    // Unlike clients, we won't auto-create brokers as they need more specific setup
+    // But we'll try to use the default broker instead
     if (!profileId) {
       console.log(
-        "This broker is not connected to our system",
+        "This broker is not connected to our system, check if a default broker has been set",
         realworkBrokerId
       );
       continue;
@@ -233,7 +260,8 @@ const processNewBookings = async (
     if (!realworkCreatedBy) continue;
 
     const createdById = await realworkService.findBrokerByRealworkId(
-      realworkCreatedBy
+      realworkCreatedBy,
+      integration.firm_id
     );
 
     if (!createdById) {
@@ -246,18 +274,114 @@ const processNewBookings = async (
 
     // GET CLIENT ID
     const realworkClientId = realworkBooking?.relaties?.find(
-      (x) => x.type === "Geplaatst door (medewerker)"
+      (x) => x.type === "Id van de gekoppelde relatie"
     )?.id;
 
     if (!realworkClientId) continue;
 
-    const clientId = await realworkService.findClientByRealworkId(
-      realworkClientId
+    // First try to find an existing client
+    let clientId = await realworkService.findClientByRealworkId(
+      realworkClientId,
+      integration.firm_id
     );
+
+    // If no client exists, create one
+    if (!clientId) {
+      console.log(
+        `Client with ID ${realworkClientId} not found, creating new client...`
+      );
+      try {
+        // Get client details from Realworks
+        let clientData;
+        try {
+          clientData = await realworkService.getClientFromRealworksId(
+            realworkClientId,
+            integration.firm_id
+          );
+        } catch (apiError) {
+          console.log(
+            `Error fetching client data from Realworks API: ${apiError.message}`
+          );
+          // Continue with minimal client data since the API failed
+          clientData = null;
+        }
+
+        // Prepare client data for insertion - use minimal data if API failed
+        const clientToCreate = {
+          first_name:
+            clientData?.roepnaam || clientData?.initialen || "Unknown",
+          last_name: clientData?.achternaam || `Realworks-${realworkClientId}`,
+          email:
+            clientData?.emailadressen?.[0]?.email ||
+            `realworks_${realworkClientId}@placeholder.com`,
+          phone_number: clientData?.telefoonnummers?.[0]?.nummer || "",
+          company_name:
+            clientData?.relatiesoort === "BEDRIJF"
+              ? clientData?.adresgegevens?.bedrijfsadres?.bedrijfsnaam || ""
+              : "",
+          language: "nl", // Default language
+          firm_id: integration.firm_id,
+        };
+
+        console.log(`Creating client with data:`, clientToCreate);
+
+        // Create client
+        const { data: newClient, error } = await supabase
+          .from("clients")
+          .insert([clientToCreate])
+          .select()
+          .single();
+
+        if (error) {
+          // If duplicate, find existing client and add relationId
+          const { data: existingClient } = await supabase
+            .from("clients")
+            .select("id")
+            .eq("email", clientToCreate.email)
+            .eq("firm_id", clientToCreate.firm_id)
+            .single();
+
+          if (existingClient) {
+            await supabase.from("external_attributes").insert([
+              {
+                entity_id: existingClient.id,
+                entity_type: "client",
+                attribute_name: "relationId",
+                attribute_value: realworkClientId,
+                integration_instance_id: integration.id,
+              },
+            ]);
+            clientId = existingClient.id;
+          } else {
+            console.log(`Error creating client:`, error);
+            continue;
+          }
+        } else {
+          // Create external attribute to link the client
+          await supabase.from("external_attributes").insert([
+            {
+              entity_id: newClient.id,
+              entity_type: "client",
+              attribute_name: "relationId",
+              attribute_value: realworkClientId,
+              integration_instance_id: integration.id,
+            },
+          ]);
+
+          console.log(
+            `Created new client with ID ${newClient.id} for Realworks relation ${realworkClientId}`
+          );
+          clientId = newClient.id;
+        }
+      } catch (error) {
+        console.log(`Error processing client:`, error);
+        continue;
+      }
+    }
 
     if (!clientId) {
       console.log(
-        "This client is not connected to our system",
+        "Failed to create or find client for Realworks ID",
         realworkClientId
       );
       continue;
@@ -316,30 +440,50 @@ const processNewBookings = async (
     });
 
     if (availableBlock && availableSlot) {
-      await bookingService.createBookingInSlot({
-        slotId: availableSlot,
-        clientId,
-        projectId,
-        profileId,
-        startTime,
-        endTime,
-        status: mappedRealworkStatus,
-        integration,
-        realworkId: realworkBooking.id,
-      });
+      console.log(
+        `Found available slot ${availableSlot} in block ${availableBlock} for booking at ${startTime}`
+      );
+      try {
+        await bookingService.createBookingInSlot({
+          slotId: availableSlot,
+          clientId,
+          projectId,
+          profileId,
+          startTime,
+          endTime,
+          status: mappedRealworkStatus,
+          integration,
+          realworkId: realworkBooking.id,
+        });
+        console.log(
+          `Successfully created booking in existing slot for realwork booking ${realworkBooking.id}`
+        );
+      } catch (error) {
+        console.error(`Error creating booking in slot:`, error);
+      }
     } else {
-      await bookingService.createNewAppointment({
-        date,
-        startTime,
-        endTime,
-        profileId,
-        projectId,
-        createdBy: createdById,
-        clientId,
-        stauts: mappedRealworkStatus,
-        integration,
-        realworkId: realworkBooking.id,
-      });
+      console.log(
+        `No available slot found, creating new appointment at ${startTime} for project ${projectId}`
+      );
+      try {
+        await bookingService.createNewAppointment({
+          date,
+          startTime,
+          endTime,
+          profileId,
+          projectId,
+          createdBy: createdById,
+          clientId,
+          status: mappedRealworkStatus,
+          integration,
+          realworkId: realworkBooking.id,
+        });
+        console.log(
+          `Successfully created new appointment for realwork booking ${realworkBooking.id}`
+        );
+      } catch (error) {
+        console.error(`Error creating new appointment:`, error);
+      }
     }
   }
 };
@@ -367,7 +511,8 @@ const processUpdateBlock = async (
     if (!realworkBlock || !block) continue;
 
     //TODO: remove
-    const realworkProjectCode = "123456" ?? realworkBlock?.project?.projectcode;
+    // const realworkProjectCode = "123456" ?? realworkBlock?.project?.projectcode;
+    const realworkProjectCode = realworkBlock?.project?.projectcode;
 
     const projectId = await realworkService.findProjectByProjectCode(
       realworkProjectCode
@@ -378,6 +523,8 @@ const processUpdateBlock = async (
       continue;
     }
 
+    console.log("Processing block for project:", realworkProjectCode);
+
     // BROKER CHECKING
     const realworkBrokerId = realworkBlock?.relaties?.find(
       (x) => x.type === "Agendapunt voor"
@@ -386,7 +533,8 @@ const processUpdateBlock = async (
     if (!realworkBrokerId) continue;
 
     const profileId = await realworkService.findBrokerByRealworkId(
-      realworkBrokerId
+      realworkBrokerId,
+      integration.firm_id
     );
 
     if (!profileId) {
@@ -405,7 +553,8 @@ const processUpdateBlock = async (
     if (!realworkCreatedBy) continue;
 
     const createdById = await realworkService.findBrokerByRealworkId(
-      realworkCreatedBy
+      realworkCreatedBy,
+      integration.firm_id
     );
 
     if (!createdById) {
@@ -508,7 +657,12 @@ const processUpdateBlock = async (
     });
 
     await Promise.all([
-      processBookingsToUpdate(updateBookings, bookingsWithAgendaId, statusMap),
+      processBookingsToUpdate(
+        updateBookings,
+        bookingsWithAgendaId,
+        statusMap,
+        integration
+      ),
       processNewBookings(newBookings, statusMap, integration),
     ]);
   }
@@ -516,10 +670,16 @@ const processUpdateBlock = async (
 
 const processNewBlock = async (realworkBlocks, statusMap, integration) => {
   for await (const realworkBlock of realworkBlocks) {
-    console.log(realworkBlock);
+    console.log(
+      "Processing new block:",
+      realworkBlock.id,
+      "on",
+      realworkBlock.begintijd,
+      "Project Code:",
+      realworkBlock?.project?.projectcode
+    );
 
-    //TODO: remove
-    const realworkProjectCode = "123456" ?? realworkBlock?.project?.projectcode;
+    const realworkProjectCode = realworkBlock?.project?.projectcode;
 
     const projectId = await realworkService.findProjectByProjectCode(
       realworkProjectCode
@@ -538,7 +698,8 @@ const processNewBlock = async (realworkBlocks, statusMap, integration) => {
     if (!realworkBrokerId) continue;
 
     const profileId = await realworkService.findBrokerByRealworkId(
-      realworkBrokerId
+      realworkBrokerId,
+      integration.firm_id
     );
 
     if (!profileId) {
@@ -549,6 +710,8 @@ const processNewBlock = async (realworkBlocks, statusMap, integration) => {
       continue;
     }
 
+    console.log("project found", projectId);
+
     // GET CREATED BY
     const realworkCreatedBy = realworkBlock?.relaties?.find(
       (x) => x.type === "Geplaatst door (medewerker)"
@@ -557,7 +720,8 @@ const processNewBlock = async (realworkBlocks, statusMap, integration) => {
     if (!realworkCreatedBy) continue;
 
     const createdById = await realworkService.findBrokerByRealworkId(
-      realworkCreatedBy
+      realworkCreatedBy,
+      integration.firm_id
     );
 
     if (!createdById) {
@@ -568,8 +732,9 @@ const processNewBlock = async (realworkBlocks, statusMap, integration) => {
       continue;
     }
 
+    // Filter out the block's own booking and cancelled bookings
     const realworkBlockBookings = realworkBlock.bookings.filter(
-      (x) => x.status !== "Geannuleerd"
+      (x) => x.status !== "Geannuleerd" && x.id !== realworkBlock.id
     );
 
     if (!realworkBlockBookings.length) continue;
@@ -597,11 +762,15 @@ const processNewBlock = async (realworkBlocks, statusMap, integration) => {
       integration,
     });
 
+    console.log(
+      `Successfully created block with ID ${block[0]?.id} for project ${projectId}`
+    );
+
     await processNewBookings(
       realworkBlockBookings,
       statusMap,
       integration,
-      block.id
+      block[0]?.id
     );
   }
 };
@@ -610,21 +779,35 @@ const processIntegrationSync = async (integration) => {
   const { statuses } = await processSyncStatusAndTypes(integration);
   const statusMap = convertToMap(statuses, "external_name", "housap_type");
 
-  const realworkAgenda =
-    fullData.resultaten ??
-    (await realworkService.getFirmAgenda(integration.firm_id));
+  console.log("statusMap", statusMap);
+
+  const realworkAgenda = await realworkService.getFirmAgenda(
+    integration.firm_id,
+    ["Bezichtiging blokken", "Bezichtiging"]
+  );
 
   let realworkBookings = [];
   let realworkBlocks = [];
+
+  // Log unique project codes for better tracking
+  const uniqueProjectCodes = new Set();
 
   realworkAgenda.forEach((agenda) => {
     //TODO: may need update
     if (agenda.agendatype === "Bezichtiging blokken") {
       realworkBlocks.push(agenda);
-    } else {
+      if (agenda.project?.projectcode) {
+        uniqueProjectCodes.add(agenda.project.projectcode);
+      }
+    } else if (agenda.agendatype === "Bezichtiging") {
       realworkBookings.push(agenda);
+      if (agenda.project?.projectcode) {
+        uniqueProjectCodes.add(agenda.project.projectcode);
+      }
     }
   });
+
+  console.log("Processing project codes:", Array.from(uniqueProjectCodes));
 
   const bookingWithABlock = new Set();
 
@@ -683,14 +866,15 @@ const processIntegrationSync = async (integration) => {
     }
   });
 
+  // TODO: remove this
   await Promise.all([
     processUpdateBlock(
-      [updateBlocks.find((x) => x.id == 226100326)],
+      updateBlocks,
       blocksWithAgendaId,
       statusMap,
       integration
     ),
-    processNewBlock([newBlocks[1]], statusMap, integration),
+    processNewBlock(newBlocks, statusMap, integration),
   ]);
 
   const bookingsWithoutBlock = realworkBlocks.filter(
@@ -721,17 +905,15 @@ const processIntegrationSync = async (integration) => {
     }
   });
 
-  //TODO: update after done
   await Promise.all([
-    processBookingsToUpdate(updateBookings, bookingsWithAgendaId, statusMap),
-    processNewBookings([newBookings[0]], statusMap, integration),
+    processBookingsToUpdate(
+      updateBookings,
+      bookingsWithAgendaId,
+      statusMap,
+      integration
+    ),
+    processNewBookings(newBookings, statusMap, integration),
   ]);
-
-  await supabase.from("integration_instances").update({
-    next_sync_at: moment()
-      .add(integration?.sync_interval ?? 60)
-      .eq("id", integration.id),
-  });
 };
 
 async function syncRealwork() {

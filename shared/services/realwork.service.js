@@ -28,6 +28,15 @@ class RealworkService {
     return data;
   };
 
+  getClientFromRealworksId = async (realworksId, firmId) => {
+    const res = await axios.get(
+      `http://172.235.181.143/getRelation/${realworksId}?supabaseUrl=${supabaseUrl}&supabaseKey=${supabaseKey}&firmId=${firmId}`
+    );
+
+    if (res.status !== 200) return [];
+    return res.data;
+  };
+
   getFirmTypes = async (firmId) => {
     const res = await axios.get(
       `http://172.235.181.143/getAgendaTypes/${firmId}?supabaseUrl=${supabaseUrl}&supabaseKey=${supabaseKey}`
@@ -46,24 +55,27 @@ class RealworkService {
     return res.data;
   };
 
-  getFirmAgenda = async (firmId) => {
+  getFirmAgenda = async (firmId, agendatypes) => {
     const startTime = moment().startOf("D").format("YYYY-MM-DD HH:mm:ss");
     const endTime = moment()
       .add(7, "days")
       .endOf("D")
       .format("YYYY-MM-DD HH:mm:ss");
+
+    console.log("getFirmAgenda", { startTime, endTime });
     try {
-      const res = await fetchAll(
-        `http://172.235.181.143/getAfdelingAgenda/${firmId}?supabaseUrl=${supabaseUrl}&supabaseKey=${supabaseKey}&begintijdVanaf=${startTime}&begintijdTot=${endTime}`
+      const agenda = await fetchAll(
+        `http://172.235.181.143/getAfdelingAgenda/${firmId}?supabaseUrl=${supabaseUrl}&supabaseKey=${supabaseKey}&agendatypes=${agendatypes}&begintijdVanaf=${startTime}&begintijdTot=${endTime}`
       );
-      return res;
+
+      return agenda;
     } catch (error) {
       console.error("Error get agenda:", error);
       return [];
     }
   };
 
-  findBrokerByRealworkId = async (realworkBrokerId) => {
+  findBrokerByRealworkId = async (realworkBrokerId, firmId = null) => {
     const { data } = await supabase
       .from("external_attributes")
       .select("entity_id")
@@ -71,35 +83,116 @@ class RealworkService {
       .eq("attribute_value", realworkBrokerId)
       .eq("entity_type", "profile");
 
-    //TODO: remove
-    return "354a1db0-17cc-4ed3-b803-cef362bc02ed" ?? data[0].entity_id;
+    if (!data || !data.length) {
+      // If firmId is provided, try to find the default broker for this firm
+      if (firmId) {
+        console.log(
+          `Broker ${realworkBrokerId} not found, trying firm default broker`
+        );
+        const { data: firmDefaultData } = await supabase
+          .from("external_attributes")
+          .select("attribute_value")
+          .eq("attribute_name", "medewerkerIdAanmaker")
+          .eq("entity_type", "firm_default")
+          .eq("entity_id", firmId);
 
-    if (!data || !data.length) return null;
+        if (firmDefaultData && firmDefaultData.length > 0) {
+          const defaultBrokerId = firmDefaultData[0].attribute_value;
+
+          // Now look up the profile for this default broker
+          const { data: defaultBrokerProfile } = await supabase
+            .from("external_attributes")
+            .select("entity_id")
+            .eq("attribute_name", "medewerkerIdAanmaker")
+            .eq("attribute_value", defaultBrokerId)
+            .eq("entity_type", "profile");
+
+          if (defaultBrokerProfile && defaultBrokerProfile.length > 0) {
+            console.log(`Using firm default broker instead`);
+            return defaultBrokerProfile[0].entity_id;
+          }
+        }
+      }
+
+      console.log(
+        `This broker is not connected to our system ${realworkBrokerId}`
+      );
+      return null;
+    }
+
+    return data[0].entity_id;
   };
 
   findProjectByProjectCode = async (projectCode) => {
-    const { data } = await supabase
+    // First get the entity_id from external_attributes
+    const { data: attributeData } = await supabase
       .from("external_attributes")
       .select("entity_id")
       .eq("attribute_name", "projectcode")
       .eq("attribute_value", projectCode)
       .eq("entity_type", "project");
-    if (!data || !data.length) return null;
 
-    return data[0].entity_id;
+    if (!attributeData || !attributeData.length) return null;
+
+    const projectId = attributeData[0].entity_id;
+
+    // Then look up the project status
+    const { data: projectData } = await supabase
+      .from("projects")
+      .select("status")
+      .eq("id", projectId)
+      .single();
+
+    // Skip projects with "deleted" or "archived" status
+    if (
+      projectData &&
+      (projectData.status === "deleted" || projectData.status === "archived")
+    ) {
+      console.log(
+        `Skipping project with code ${projectCode} because status is ${projectData.status}`
+      );
+      return null;
+    }
+
+    return projectId;
   };
 
-  findClientByRealworkId = async (realworkClientId) => {
+  findClientByRealworkId = async (realworkClientId, firmId = null) => {
     const { data } = await supabase
       .from("external_attributes")
       .select("entity_id")
       .eq("attribute_name", "relationId")
       .eq("attribute_value", realworkClientId)
       .eq("entity_type", "client");
-    //TODO: remove
-    return "56b50044-d01c-4e3e-a1d4-2094ccce5f63" ?? data[0].entity_id;
 
-    if (!data || !data.length) return null;
+    if (!data || !data.length) {
+      // If firmId is provided, try to find a default client for this firm
+      if (firmId) {
+        console.log(
+          `Client ${realworkClientId} not found, trying firm default client`
+        );
+        const { data: firmDefaultData } = await supabase
+          .from("external_attributes")
+          .select("attribute_value")
+          .eq("attribute_name", "defaultClientId")
+          .eq("entity_type", "firm_default")
+          .eq("entity_id", firmId);
+
+        if (firmDefaultData && firmDefaultData.length > 0) {
+          console.log(`Using firm default client instead`);
+          return firmDefaultData[0].attribute_value;
+        }
+      }
+
+      console.log(
+        `This client is not connected to our system ${realworkClientId}`
+      );
+      return null;
+    }
+
+    //TODO: remove
+    // return "56b50044-d01c-4e3e-a1d4-2094ccce5f63" ?? data[0].entity_id;
+    return data[0].entity_id;
   };
 }
 
