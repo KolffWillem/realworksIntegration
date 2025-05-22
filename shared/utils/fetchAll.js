@@ -1,4 +1,4 @@
-import axios from "axios";
+const axios = require("axios");
 
 const fetchAll = async (url) => {
   let currentUrl = url;
@@ -37,5 +37,6 @@ const fetchAll = async (url) => {
   return items;
 };
 
-
 module.exports = fetchAll;
+
+
