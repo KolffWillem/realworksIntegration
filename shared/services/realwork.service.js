@@ -7,13 +7,28 @@ const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 class RealworkService {
   getIntegrationsToSync = async () => {
-    const { data: realworks } = await supabase
+    console.log('🔍 Starting getIntegrationsToSync...');
+    console.log('📡 Supabase Config:', {
+      url: supabase.supabaseUrl,
+      key: supabase.supabaseKey ? '***' + supabase.supabaseKey.slice(-4) : 'not set'
+    });
+
+    const { data: realworks, error: realworksError } = await supabase
       .from("integrations")
       .select("id")
       .eq("name", "realworks")
       .single();
 
-    if (!realworks) return [];
+    console.log('🔎 Realworks integration query result:', { 
+      found: !!realworks, 
+      error: realworksError,
+      id: realworks?.id 
+    });
+
+    if (!realworks) {
+      console.log('⚠️ No realworks integration found');
+      return [];
+    }
 
     const { data, error } = await supabase
       .from("integration_instances")
@@ -21,8 +36,17 @@ class RealworkService {
       .or(`next_sync_at.gt.${moment().toISOString()}, next_sync_at.is.null`)
       .eq("integration_id", realworks.id);
 
+    console.log('📊 Integration instances query result:', {
+      count: data?.length || 0,
+      error: error,
+      firstInstance: data?.[0] ? {
+        id: data[0].id,
+        next_sync_at: data[0].next_sync_at
+      } : null
+    });
+
     if (error) {
-      console.log("error  fetching integration_instances", { error });
+      console.log("❌ Error fetching integration_instances", { error });
     }
 
     return data;
