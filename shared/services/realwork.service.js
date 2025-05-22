@@ -13,23 +13,27 @@ class RealworkService {
       key: supabase.supabaseKey ? '***' + supabase.supabaseKey.slice(-4) : 'not set'
     });
 
+    // First query to get realworks integration
+    console.log('🔎 Querying for realworks integration...');
     const { data: realworks, error: realworksError } = await supabase
       .from("integrations")
       .select("id")
       .eq("name", "realworks")
       .single();
 
-    console.log('🔎 Realworks integration query result:', { 
+    console.log('📊 Realworks integration query result:', { 
       found: !!realworks, 
       error: realworksError,
       id: realworks?.id 
     });
 
     if (!realworks) {
-      console.log('⚠️ No realworks integration found');
+      console.log('⚠️ No realworks integration found, returning empty array');
       return [];
     }
 
+    // Second query to get integration instances
+    console.log('🔎 Querying for integration instances...');
     const { data, error } = await supabase
       .from("integration_instances")
       .select("*")
@@ -47,9 +51,11 @@ class RealworkService {
 
     if (error) {
       console.log("❌ Error fetching integration_instances", { error });
+      return [];
     }
 
-    return data;
+    console.log('✅ getIntegrationsToSync completed successfully');
+    return data || [];
   };
 
   getClientFromRealworksId = async (realworksId, firmId) => {

@@ -21,8 +21,6 @@ async function getAuthHeaderAgenda(firmId, supabaseUrl, supabaseKey) {
       .eq("firm_id", firmId)
       .single();
 
-    console.log("Supabase query result:", { data, error });
-
     if (error) throw new Error("Error fetching settings");
 
     const settings = data.settings;
