@@ -9,6 +9,7 @@ const getBedrijfscode = require('./utils/getBedrijfscode');
 const { createAgenda, updateAgenda } = require('./integrations/agendaIntegration');
 const { createRelation, updateRelation } = require('./integrations/relationIntegration');
 const syncRealwork = require('../cronjob/sync-realworks-data');
+const cron = require("node-cron");
 
 // ip 172.235.181.143
 
@@ -392,8 +393,6 @@ app.get('/hello', (req, res) => {
   res.send('Hello World');
 });
 
-// Initialize cronjob
-const cron = require("node-cron");
 
 cron.schedule("*/10 * * * * *", async () => {
   console.log("⏰ Starting job at", new Date().toISOString());
