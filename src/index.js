@@ -348,6 +348,32 @@ app.get("/getAfdelingAgenda/:firmId", async (req, res) => {
   }
 });
 
+app.get('/getRelation/:relationId', async (req, res) => {
+  const { relationId } = req.params;
+  const { supabaseUrl, supabaseKey, firmId } = req.query;
+
+  try {
+    const { authHeaderRelation } = await getAuthHeaderRelation(firmId, supabaseUrl, supabaseKey);
+
+    const response = await fetch(`https://api.realworks.nl/relaties/v1/${relationId}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': authHeaderRelation,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error fetching relation: ${response.statusText}`);
+    }
+
+    const relation = await response.json();
+    res.status(200).json(relation);
+  } catch (error) {
+    console.error('Error in /getRelation:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Add new endpoint for manual sync
 app.post('/sync-realworks', async (req, res) => {
   console.log("🔄 Starting manual sync at", new Date().toISOString());
