@@ -323,6 +323,7 @@ const processNewBookings = async (
               : "",
           language: "nl", // Default language
           firm_id: integration.firm_id,
+          type: clientData?.relatiesoort
         };
 
         console.log(`Creating client with data:`, clientToCreate);
@@ -825,19 +826,31 @@ const processIntegrationSync = async (integration) => {
     const blockBrokerId = block?.relaties?.find(
       (x) => x.type === "Agendapunt voor"
     )?.id;
-    const projectCode = block.project.projectcode;
+    const projectCode = block?.project?.projectcode;
+
+    // Skip blocks that don't have required values
+    if (!blockBrokerId || !projectCode) {
+
+      return null;
+    }
 
     const bookings = realworkBookings.filter((booking) => {
       const bookingBrokerId = booking?.relaties?.find(
         (x) => x.type === "Agendapunt voor"
       )?.id;
-      const bookingProjectCode = booking.project.projectcode;
+      const bookingProjectCode = booking?.project?.projectcode;
+
+      // Skip bookings that don't have required values
+      if (!bookingBrokerId || !bookingProjectCode) {
+        return false;
+      }
 
       if (
         bookingProjectCode === projectCode &&
         bookingBrokerId === blockBrokerId &&
         moment(block.begintijd).isSameOrBefore(booking.begintijd) &&
-        moment(block.eindtijd).isSameOrAfter(booking.eindtijd)
+        moment(block.eindtijd).isSameOrAfter(booking.eindtijd) &&
+        booking.id !== block.id
       ) {
         bookingWithABlock.add(booking.id);
         return true;
@@ -851,6 +864,9 @@ const processIntegrationSync = async (integration) => {
       bookings,
     };
   });
+
+  // Filter out null blocks before getting IDs
+  realworkBlocks = realworkBlocks.filter(block => block !== null);
 
   const realworkBlockIds = realworkBlocks.map((x) => x.id);
 
