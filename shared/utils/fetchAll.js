@@ -1,11 +1,11 @@
-const axios = require("axios");
+import axios from "axios";
 
 const fetchAll = async (url) => {
-  let api = url;
+  let currentUrl = url;
   let items = [];
 
-  while (!!api) {
-    const response = await axios.get(url);
+  while (true) {
+    const response = await axios.get(currentUrl);
     if (response.status !== 200) {
       return [];
     }
@@ -15,13 +15,27 @@ const fetchAll = async (url) => {
       paginering: { volgende },
     } = response.data;
 
-    const nextLink = volgende;
-    api = nextLink ?? null;
     items = [...items, ...resultaten];
+
+    if (!volgende) {
+      break;
+    }
+
+    // Extract the vanaf parameter from the URL
+    const vanafMatch = volgende.match(/vanaf=(\d+)/);
+    if (!vanafMatch) {
+      break;
+    }
+
+    // Construct new URL with the extracted vanaf parameter
+    const vanaf = vanafMatch[1];
+    const urlObj = new URL(currentUrl);
+    urlObj.searchParams.set('vanaf', vanaf);
+    currentUrl = urlObj.toString();
   }
+
   return items;
 };
 
-console.log("fetchAll", fetchAll);
 
 module.exports = fetchAll;
