@@ -88,7 +88,7 @@ app.put('/updateAgenda/:agendaId', async (req, res) => {
   }
 });
 
-app.put('/updateAgenda/v2', async (req, res) => {
+app.put('/updateAgendaV2', async (req, res) => {
   const { firmId, agendaData, supabaseUrl, supabaseKey } = req.body;
 
   try {
@@ -100,7 +100,7 @@ app.put('/updateAgenda/v2', async (req, res) => {
     const updateResult = await updateAgendaV2(authHeaderAgenda, agendaData);
     res.status(200).json({ message: 'Success', data: updateResult });
   } catch (error) {
-    console.error('Error in /updateAgenda/v2:', error);
+    console.error('Error in /updateAgendaV2:', error);
     res.status(500).json({ error: error.message });
   }
 });
