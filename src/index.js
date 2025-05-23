@@ -91,6 +91,8 @@ app.put('/updateAgenda/:agendaId', async (req, res) => {
 app.put('/updateAgendaV2', async (req, res) => {
   const { firmId, agendaData, supabaseUrl, supabaseKey } = req.body;
 
+  console.log("agendaData", agendaData)
+
   try {
     const formattedSupabaseUrl = supabaseUrl?.endsWith('/')
       ? supabaseUrl 
