@@ -6,7 +6,7 @@ const getAuthHeaderAgenda = require('./utils/getAuthHeaderAgenda');
 const getAuthHeaderRelation = require('./utils/getAuthHeaderRelation');
 const getAfdelingscode = require('./utils/getAfdelingscode');	
 const getBedrijfscode = require('./utils/getBedrijfscode');
-const { createAgenda, updateAgenda } = require('./integrations/agendaIntegration');
+const { createAgenda, updateAgenda, updateAgendaV2 } = require('./integrations/agendaIntegration');
 const { createRelation, updateRelation } = require('./integrations/relationIntegration');
 const syncRealwork = require('../cronjob/sync-realworks-data');
 const cron = require("node-cron");
@@ -22,7 +22,7 @@ app.post('/createAgenda', async (req, res) => {
     supabaseKey, 
     supabaseUrl 
   } = req.body;
-
+ 
   try {
     console.log(firmId, supabaseUrl, supabaseKey)
     const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, supabaseUrl, supabaseKey);
@@ -61,7 +61,6 @@ app.post('/createRelation', async (req, res) => {
       woonplaats: woonplaats,
     };
 
-    console.log("newRelationBody", newRelationBody)
 
     const relationResult = await createRelation(authHeaderRelation, newRelationBody);
     res.status(200).json({ message: 'Success', data: relationResult });
@@ -88,6 +87,24 @@ app.put('/updateAgenda/:agendaId', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+app.put('/updateAgenda/v2', async (req, res) => {
+  const { firmId, agendaData, supabaseUrl, supabaseKey } = req.body;
+
+  try {
+    const formattedSupabaseUrl = supabaseUrl?.endsWith('/')
+      ? supabaseUrl 
+      : `${supabaseUrl}/`;
+    const { authHeaderAgenda } = await getAuthHeaderAgenda(firmId, formattedSupabaseUrl, supabaseKey);
+
+    const updateResult = await updateAgendaV2(authHeaderAgenda, agendaData);
+    res.status(200).json({ message: 'Success', data: updateResult });
+  } catch (error) {
+    console.error('Error in /updateAgenda/v2:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 
 app.put('/updateRelation', async (req, res) => {
   const { firmId, email, companyName, firstName, lastName, mobilePhone, accountManager, type = "PARTICULIER", supabaseUrl, supabaseKey, street, houseNumber, houseNumberAddition, postalCode, city, relationId } = req.body;

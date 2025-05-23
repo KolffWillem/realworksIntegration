@@ -41,10 +41,7 @@ async function getAuthHeaderRelation(firmId, supabaseUrl, supabaseKey) {
     throw new Error('No integration instance found for this firm');
   }
 
-  console.log('Successfully fetched settings:', { 
-    hasSettings: !!data.settings,
-    hasEncryptedToken: data.settings?.encrypted_token_relation ? true : false 
-  });
+
 
   const settings = data.settings;
   const decryptedApiKey = decrypt(settings.encrypted_token_relation, encryptionKey);

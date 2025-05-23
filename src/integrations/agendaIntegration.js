@@ -66,7 +66,35 @@ async function updateAgenda(authHeader, agendaId, agendaData) {
   }
 }
 
+async function updateAgendaV2(authHeader, agendaData) {
+  try {
+    const response = await fetch(`https://api.realworks.nl/agenda/v2`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': authHeader,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(agendaData),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Error updating agenda: ${response.statusText} - ${errorText}`);
+    }
+
+    const updateAgendaData = await response.json();
+    return updateAgendaData;
+  } catch (error) {
+    console.error('Error in updateAgendaV2:', error);
+    throw error;
+  }
+}
+
+
+
+
 module.exports = {
   createAgenda,
   updateAgenda,
+  updateAgendaV2,
 };
